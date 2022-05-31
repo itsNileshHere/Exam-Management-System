@@ -1,0 +1,970 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+/* .modal.fade .modal-dialog.modal-dialog-zoom {
+    -webkit-transform: translate(0, 0)scale(.5) !important;
+    transform: translate(0, 0)scale(.5) !important;
+}
+
+.modal.show .modal-dialog.modal-dialog-zoom {
+    -webkit-transform: translate(0, 0)scale(1) !important;
+    transform: translate(0, 0)scale(1) !important;
+} */
+
+/* .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+
+.not-found-msg {
+    height: 95px;
+    padding-top: 15px;
+    margin-bottom: 0px !important;
+}
+
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+    border-radius: .35rem;
+    cursor: pointer;
+}
+
+.pagination .page-item .page-link {
+    background-color: #f7f7f7;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.pagination .page-item.active .page-link {
+    border-color: #4e4174;
+    background-color: #4e4174;
+    color: White;
+    font-weight: 500;
+}
+
+tbody tr td .fa-edit {
+    color: #e9b530;
+    cursor: pointer;
+}
+
+tbody tr td .fa-trash {
+    color: red;
+    cursor: pointer;
+}
+
+.card-header {
+    font-size: 18px;
+    height: 55px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    padding-top: 15px !important;
+}
+
+.toggle-password-eye {
+    float: right;
+    top: -25px;
+    right: 10px;
+    position: relative;
+    cursor: pointer;
+    color: #858796;
+}
+
+.container-fluid h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #6a6a6a;
+}
+
+/* ------------------ navbar ------------------ */
+
+#content-wrapper #content h2 {
+    color: black;
+    font-size: 26px;
+}
+
+/* ----------------- logout ----------------- */
+
+#logout_id {
+    cursor: pointer;
+}
+
+/* --------------- Modal ----------------- */
+
+.modal-header {
+    padding: 0px !important;
+    padding-left: 18px !important;
+    padding-bottom: 5px !important;
+    background-color: #f8f9fc;
+}
+
+.modal-header .close {
+    font-size: 20px !important;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.modal-title {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-body {
+    padding: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.modal-footer {
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.swal-modal {
+    will-change: unset;
+}
+
+.modal_submit {
+    height: 35px;
+}
+
+.modal_cancel {
+    height: 35px;
+}
+
+/* --------------- classes.php --------------- */
+
+.modal#class_edit_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#class_edit_modal .modal-body .form-group {
+    margin-bottom: 20px;
+}
+
+.modal#class_edit_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+.modal#class_edit_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#class_edit_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#class_edit_modal .modal-dialog {
+    max-width: 560px;
+}
+
+#addclassModal #add_class_modal_form .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#addclassModal #add_class_modal_form .modal-body .form-group {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#addclassModal #add_class_modal_form .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+#addclassModal #add_class_modal_form .modal-header {
+    padding-bottom: 0px !important;
+}
+
+#addclassModal #add_class_modal_form .modal-title {
+    margin-top: 12px;
+}
+
+#addclassModal #add_class_modal_form .modal-dialog {
+    max-width: 560px;
+}
+
+/* ------------- add_exam ------------ */
+
+#add_exam {
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+/* ------------- add_student ------------- */
+
+#add_student {
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important
+}
+
+.col-sm-3 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-sm-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%
+}
+
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5
+}
+
+.col-sm-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.col-sm-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.box-container {
+    border-radius: 10px;
+    height: 560px;
+    background-color: white;
+    color: black;
+    padding-bottom: 20px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+}
+
+/* --------- manage_exam --------- */
+
+.table-box {
+    border-radius: 10px;
+    height: auto;
+    background-color: white;
+    color: black !important;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+}
+
+tbody {
+    color: #55585c;
+}
+
+/* ----------- manage_course.php ---------- */
+
+#assigncourseModal #course_assign_modal_form .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#assigncourseModal #course_assign_modal_form .modal-body .form-group {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#assigncourseModal #course_assign_modal_form .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+#assigncourseModal #course_assign_modal_form .modal-header {
+    padding-bottom: 0px !important;
+}
+
+#addclassMassigncourseModalodal #course_assign_modal_form .modal-title {
+    margin-top: 12px;
+}
+
+#assigncourseModal #course_assign_modal_form .modal-dialog {
+    max-width: 560px;
+}
+
+/* ------------ manage_student ------------ */
+
+/* .modal#exam_edit_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#exam_edit_modal .modal-body .form-group {
+    margin-bottom: 10px;
+}
+
+.modal#exam_edit_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+.modal#exam_edit_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#exam_edit_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#exam_edit_modal .modal-dialog {
+    max-width: 560px;
+} */
+
+/* ------------ manage_student ------------ */
+
+.modal#std_edit_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#std_edit_modal .modal-body .form-group {
+    margin-bottom: 10px;
+}
+
+.modal#std_edit_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+.modal#std_edit_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#std_edit_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#std_edit_modal .modal-dialog {
+    max-width: 560px;
+}
+
+/* ------------- course -------------- */
+
+.plus-button {
+    width: 30px;
+    float: right;
+}
+
+.modal#course_edit_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#course_edit_modal .modal-body .form-group {
+    margin-bottom: 12px;
+}
+
+.modal#course_edit_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+.modal#course_edit_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#course_edit_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#course_edit_modal .modal-dialog {
+    max-width: 560px;
+}
+
+#addcourseModal #add_course_modal_form .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#addcourseModal #add_course_modal_form .modal-body .form-group {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#addcourseModal #add_course_modal_form .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+}
+
+#addcourseModal #add_course_modal_form .modal-header {
+    padding-bottom: 0px !important;
+}
+
+#addcourseModal #add_course_modal_form .modal-title {
+    margin-top: 12px;
+}
+
+#addcourseModal #add_course_modal_form .modal-dialog {
+    max-width: 560px;
+}
+
+
+/* ------------------- Profile Info ------------------- */
+
+#userDropdown {
+    padding: 0px !important;
+    padding-right: 8px !important;
+}
+
+.profile-pic {
+    float: left;
+    height: 470px;
+    width: 32.8%;
+    margin: 0;
+    text-align: center;
+    border-right: 1px solid #e3e6f0;
+}
+
+.profile-info {
+    height: 470px;
+    width: 67.2%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#profile-position {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#profile-box {
+    height: 470px;
+    width: 65%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.profile-pic-div {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#pfpphoto {
+    height: 150px;
+
+}
+
+#pfpfile {
+    display: none;
+}
+
+#pfpuploadBtn {
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(248, 246, 241);
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ------------ Login Form ------------ */
+
+.container-log {
+    margin-top: 5rem;
+    margin-left: 100px;
+    margin-right: 90px;
+}
+
+.log-img {
+    height: 300px;
+}
+
+.login-pill {
+    /* width: 38%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.log-form-container {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 40px !important;
+    margin-right: 80px !important;
+}
+
+.log-form-container .form-check-input, .log-form-container .form-check-label {
+    cursor: pointer;
+}
+
+#adm_login_btn, #std_login_btn {
+    background-color: #1266f1;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+#std_login_form, #adm_login_form {
+    color: black;
+}
+
+.forgot_pass {
+    color: black;
+    text-decoration: none;
+}
+
+.forgot_pass:hover, .forgot_pass:focus {
+    color: rgb(94, 94, 94);
+    text-decoration: none;
+}
+
+.link-danger {
+    color: #f93154;
+}
+
+.link-danger:focus, .link-danger:hover {
+    color: #fa5a76;
+    text-decoration: none;
+}
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+/* ------------------ Registration Form ------------------- */
+
+#reg_form {
+    color: black;
+}
+
+#reg_btn {
+    background-color: #1266f1;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+.profile-pic-reg {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.profile-pic-reg img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border: 8px solid #dcdcdc;
+}
+
+.profile-pic-reg .round {
+    position: absolute;
+    background-color: #00b4ff;
+    bottom: -8px;
+    right: -10px;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#file {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+
+}
+
+#file::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+/* -------------------- add_question.php -------------------- */
+
+.text-black {
+    color: black !important;
+}
+
+#exam_info_card .card-body {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+#exam_info_card .card-body .form-group {
+    margin-bottom: 0px;
+}
+
+#exam_info_card .card-body .form-group label {
+    font-size: 15px;
+}
+
+#exam_info_card .form-group .form-control[readonly] {
+    background-color: #f8f9fc;
+}
+
+#exam_info_card .form-control:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.modal#add_qs_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#add_qs_modal .modal-body .form-group {
+    margin-bottom: 12px;
+}
+
+.modal#add_qs_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+}
+
+.modal#add_qs_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#add_qs_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#add_qs_modal .modal-dialog {
+    max-width: 560px;
+}
+
+.modal#edit_qs_modal .modal-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal#edit_qs_modal .modal-body .form-group {
+    margin-bottom: 12px;
+}
+
+.modal#edit_qs_modal .modal-body .form-group label {
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+}
+
+.modal#edit_qs_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#edit_qs_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#edit_qs_modal .modal-dialog {
+    max-width: 560px;
+}
+
+.qs-box-header {
+    position: relative;
+    color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+}
+
+.over-the-shadow {
+    position: relative;
+    float: none;
+    height: 50px;
+    background-color: white;
+}
+
+.over-the-shadow .row {
+    margin-left: 10px;
+    width: 91%;
+    position: relative;
+    top: 30%;
+}
+
+.over-the-shadow .not-found-msg {
+    margin: 0px;
+    padding-top: 28px;
+    padding-bottom: 15px;
+}
+
+.qs-not-found {
+    height: 80px;
+}
+
+.qs-box {
+    padding-bottom: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+    height: auto;
+    max-height: 700px;
+    padding-left: 20px;
+    padding-right: 13px;
+    max-height: 583px;
+    overflow-y: scroll;
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.3s;
+}
+
+.qs-box th {
+    color: black;
+}
+
+.qs-box:hover {
+    color: rgba(0, 0, 0, 0.4);
+    overflow-y: scroll;
+}
+
+.qs-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.qs-box::-webkit-scrollbar-thumb {
+
+    background-clip: content-box;
+    border: 1px solid #fff;
+    border-radius: 10rem;
+    box-shadow: inset 0 0 0 10px;
+}
+
+.qs-box::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.qs-box::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* ---------------- Admin List ---------------- */
+
+.admin_data #adm_profile_div {
+    height: 55px;
+    width: 55px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
+
+.admin_data img {
+    width: 55px;
+}
+
+.pt-2_1 {
+    padding-top: 20px !important;
+}
+
+.pb-2_1 {
+    padding-bottom: 20px !important;
+}
+
+.butn {
+    padding: 6px 8px 6px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.butn:focus,
+a.butn:hover {
+    text-decoration: none
+}
+
+.butn-success {
+    color: #fff;
+    background-color: #00b74a;
+    border: 1px solid #00b74a;
+}
+
+.butn-success:hover {
+    color: #fff;
+    background-color: #16a14e;
+}
+
+.modal#generate_token_modal .modal-body {
+    height: 145px;
+    text-align: center;
+}
+
+.modal#generate_token_modal .modal-body #tokenHideDiv {
+    margin-top: 45px;
+    font-size: 18px;
+    color: #111;
+}
+
+.modal#generate_token_modal .modal-header {
+    padding-bottom: 0px !important;
+}
+
+.modal#generate_token_modal .modal-title {
+    margin-top: 12px;
+}
+
+.modal#generate_token_modal .modal-dialog {
+    max-width: 560px;
+}
+
+#tokenShowDiv p {
+    color: #d60000;
+    padding: 15px;
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+#tokenShowDiv .label {
+    padding: 0px 10px 15px;
+    font-size: 16px;
+    color: #111;
+}
+
+#tokenShowDiv #copy_text {
+    position: relative;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: auto;
+    height: 40px;
+    width: 185px;
+}
+
+#tokenShowDiv input.text {
+    width: 115px;
+    font-size: 16px;
+    color: #555;
+    border: none;
+    outline: none;
+}
+
+#tokenShowDiv #copy_text button {
+    height: 28px;
+    width: 30px;
+    background-color: #5784f5;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#tokenShowDiv #copy_text button:active {
+    background: #4d7ae9;
+}
+
+#tokenShowDiv #copy_text button:before {
+    content: "Copied";
+    position: absolute;
+    top: 5px;
+    right: -45px;
+    background: #5c81dc;
+    padding: 5px 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: none;
+}
+
+#tokenShowDiv #copy_text button:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background: #5c81dc;
+    transform: rotate(45deg);
+    display: none;
+    border-top-right-radius: 20px;
+}
+
+#tokenShowDiv #copy_text.active button:before,
+#tokenShowDiv #copy_text.active button:after {
+    display: block;
+}
+

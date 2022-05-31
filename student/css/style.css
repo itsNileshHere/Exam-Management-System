@@ -1,0 +1,709 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+tbody tr td .fa-edit {
+    color: #e9b530;
+    cursor: pointer;
+}
+
+.pfp {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.transparent {
+    position: absolute;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+#wrapper #content-wrapper {
+    /* background-color: #f8f9fc; */
+    background-color: #eff2f4;
+    width: 100%;
+    overflow-x: hidden
+}
+
+#wrapper #content-wrapper #content {
+    flex: 1 0 auto
+}
+
+.current {
+    font-weight: bold;
+    color: rgba(0, 0, 0, .9) !important;
+}
+
+.card-header {
+    font-size: 18px;
+    height: 55px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    padding-top: 15px !important;
+}
+
+.toggle-password-eye {
+    float: right;
+    top: -25px;
+    right: 10px;
+    position: relative;
+    cursor: pointer;
+    color: #858796;
+}
+
+.container-fluid h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #6a6a6a;
+}
+
+.box-container {
+    border-radius: 10px;
+    height: 560px;
+    background-color: white;
+    color: black;
+    padding-bottom: 20px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+}
+
+/* --------- exam.php --------- */
+
+.table-box {
+    border-radius: 10px;
+    height: auto;
+    background-color: white;
+    color: black !important;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+}
+
+.butn {
+    padding: 6px 8px 6px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.butn:focus,
+a.butn:hover {
+    text-decoration: none
+}
+
+.butn-primary {
+    color: #fff;
+    background-color: #1266f1;
+    border-color: #1266f1;
+}
+
+.butn-secondary {
+    color: rgb(0, 0, 0);
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+.butn-success {
+    color: #fff;
+    background-color: #00b74a;
+    border: 1px solid #00b74a;
+}
+
+.butn-success:hover {
+    color: #fff;
+    background-color: #16a14e;
+}
+
+.butn-danger {
+    color: #fff;
+    background-color: #e74a3b;
+    border: 1px solid #e74a3b;
+}
+
+.butn-danger:hover {
+    color: #fff;
+    background-color: #d52a1a
+}
+
+.butn-danger.disabled {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    opacity: .65;
+    pointer-events: none;
+    cursor: default;
+
+}
+
+#exam_box tbody .butn {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#exam_box tbody .butn-danger {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* -------------------- exam_details.php -------------------- */
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+.color-gray {
+    color: rgb(43, 43, 43) !important;
+}
+
+.exam-details-position {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem;
+}
+
+.exam-details-position .box-container {
+    height: auto;
+    width: 68%;
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 32%) !important;
+    margin-bottom: 20px;
+}
+
+/* .exam-details-position .box-container .card-header {
+    background-color: #268926;
+    color: #fff;
+    font-weight: 600;
+} */
+
+.exam-details-position .form-group {
+    margin: 0 25px 20px;
+    padding: 0 0 0;
+}
+
+.exam-details-position .col {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.exam-details-position .col-9 {
+    padding-left: 20px;
+    padding-right: 0;
+
+}
+
+.form-pad {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.exam-details-position .form-control:disabled,
+.form-control[readonly] {
+    background-color: #f8f9fc;
+}
+
+.exam-start-btn {
+    float: right;
+}
+
+.exam-start-btn a.butn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px 5px;
+}
+
+.back-btn {
+    float: left;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    background-color: #3e3e3e;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+#exam_back_btn {
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+.back-btn:hover {
+    text-decoration: none;
+    color: black;
+    background-color: #fafafaf5;
+    box-shadow: 0px 15px 20px rgb(119 151 167 / 52%);
+    transform: translateY(-7px);
+}
+
+/* ------------------- Profile Info ------------------- */
+
+#userDropdown {
+    padding: 0px !important;
+    padding-right: 8px !important;
+}
+
+.profile-pic {
+    float: left;
+    height: 505px;
+    width: 32.8%;
+    margin: 0;
+    text-align: center;
+    border-right: 1px solid #e3e6f0;
+}
+
+.profile-pic-div {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-info div h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    height: 505px;
+    width: 67.2%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#profile-position {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+#profile-box {
+    height: 505px;
+    width: 64%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#pfpphoto {
+    height: 150px;
+}
+
+#pfpfile {
+    display: none;
+}
+
+#pfpuploadBtn {
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(248, 246, 241);
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    display: none;
+}
+
+.profile-info .form-control:disabled,
+.form-control[readonly] {
+    background-color: #f8f9fc;
+}
+
+/* --------------- start_exam.php -------------- */
+
+.exam-check-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.2rem;
+}
+
+.exam-check-div .box-container {
+    height: 472px;
+    width: 60.5%;
+}
+
+.exam-check-div .box-container .card-header {
+    color: #fff;
+    background-color: #495397;
+}
+
+.start_exam_containts {
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.start_exam_containts h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.exam_details {
+    color: #1d1d1d;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 0px 2px;
+}
+
+.exam_details_warn1 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 18px 0 0;
+    color: #cb0000;
+}
+
+.exam_details_warn2 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px 0 20px;
+    color: #cb0000;
+}
+
+#start_exam_check_btn {
+    margin-left: 6px;
+}
+
+/* ------------ exam_question.php ------------ */
+
+#wrapper #qs-content-wrapper {
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#wrapper #qs-content-wrapper #qs-content {
+    flex: 1 0 auto;
+    /* width: 80%;
+    float: left; */
+}
+
+/* #wrapper #qs-content-wrapper #pag-content {
+    flex: 1 0 auto;
+    width: 20%;
+    float: left;
+} */
+
+.qs-topbar {
+    height: 55px;
+    background-color: rgb(11, 11, 187);
+}
+
+.question-part {
+    height: 100%;
+    width: 80%;
+    float: left;
+    color: black;
+    border-right: 2px solid lightblue;
+    /* background-color: red; */
+}
+
+.question-part #qs_id {
+    padding: 30px 30px 8px;
+    font-size: 18px;
+}
+
+#qs_id .question_number {
+    font-weight: 600;
+}
+
+#qs_id .qs_marks {
+    font-size: 16px;
+}
+
+.question-part #question {
+    padding: 10px 30px 30px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205)
+}
+
+.question-part #question .float-right {
+    font-size: 16px;
+}
+
+.question-part #answer {
+    padding: 30px 30px 10px;
+    font-size: 18px;
+}
+
+.question-part #answer .form-check-input {
+    margin-top: 7px;
+}
+
+.question-part #answer .form-check-label {
+    margin-left: 4px;
+}
+
+.pagination-part {
+    width: 20%;
+    float: right;
+    height: auto;
+    max-height: calc(100vh - 55px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.3s;
+    /* background-color: blue; */
+}
+
+.pagination-part .qs-no-paginate {
+    /* margin-top: 5px; */
+    margin-bottom: 15px;
+    margin-left: 8px;
+    margin-right: 1px;
+    height: auto;
+    max-height: 230px;
+    overflow-y: scroll;
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.3s;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8.5px;
+    border: 2px solid lightblue;
+    background-color: rgba(145, 145, 255, 0.295);
+    cursor: default;
+}
+
+.pagination-part:hover,
+.qs-no-paginate:hover {
+    color: rgba(0, 0, 0, 0.4);
+    overflow-y: scroll;
+}
+
+.pagination-part::-webkit-scrollbar,
+.qs-no-paginate::-webkit-scrollbar {
+    width: 7px;
+}
+
+.qs-no-paginate::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 1px solid #dfdfff;
+    border-radius: 10rem;
+    box-shadow: inset 0 0 0 10px;
+}
+
+.pagination-part::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 1px solid fff;
+    border-radius: 10rem;
+    box-shadow: inset 0 0 0 10px;
+}
+
+.pagination-part::-webkit-scrollbar-button,
+.qs-no-paginate::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.pagination-part::-webkit-scrollbar-corner,
+.qs-no-paginate::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.numID {
+    height: 31px;
+    width: 31px;
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* .num-Attempted {
+    color: #fff;
+    background-color: #00b74a;
+    border: 1px solid #00b74a;
+} */
+
+/* .num-NotAttempted {
+    color: #000;
+    background-color: #f0f0f0;
+    border: 1px solid #5f5f5f81;
+} */
+
+.num-NotSelected {
+    color: #000;
+    background-color: #f0f0f0;
+    border: 1px solid #5f5f5f81;
+}
+
+.num-Selected {
+    color: #fff;
+    background-color: #0796e9;
+    border: 1px solid #046eac;
+}
+
+/* .num-Review {
+    color: #fff;
+    background-color: #684999;
+    border: 1px solid #684999;
+}
+
+.num-NotAnswered {
+    color: #fff;
+    background-color: #dd2a1a;
+    border: 1px solid #dd2a1a;
+} */
+
+.pagination-part .qs-no-paginate .numID {
+    margin: 4px 4.2px 5px;
+    padding: 2px 5px 2px;
+}
+
+.profile {
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    cursor: default;
+}
+
+.legends {
+    margin: 15px 18px 15px;
+    color: black;
+}
+
+.legends .numID {
+    margin: 2.5px 10px 2.5px;
+    cursor: default;
+}
+
+.headline {
+    padding: 6px 6px 6px;
+    cursor: default;
+    color: white;
+    background-color: rgb(11, 11, 187);
+    text-align: center;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #1268f170;
+    margin-bottom: 20px;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 60px;
+    border-top: 2px solid lightblue;
+    background-color: rgba(145, 145, 255, 0.295);
+}
+
+/* .btn.btn-review {
+    color: #fff;
+    background-color: #684999;
+    border-color: #684999;
+}
+
+.btn.btn-review:hover {
+    color: #fff;
+    background-color: #563c80;
+}
+
+.btn.btn-review:focus {
+    background-color: #563c80;
+    box-shadow: 0 0 0 0.25rem rgba(95, 62, 150, 0.5);
+}
+
+.btn.btn-review:active:focus {
+    box-shadow: 0 0 0 0.2rem rgb(95, 62, 150, 0.5)
+} */
+
+#submitPaper.btn-danger {
+    background-color: #d52a1a;
+}
+
+#submitPaper.btn-danger:hover {
+    background-color: #c42719;
+}
+
+#exam_timer {
+    color: black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    /* margin-bottom: 10px; */
+}
+
+/* -------------- home.php -------------- */
+
+.box-container.exams-view {
+    width: 28%;
+    height: 20rem;
+}
+
+.exams-view .card-header {
+    background-color: #27a127;
+    color: #fff;
+}
+
+#student_details {
+    margin: 15px 18px 15px;
+    color: black;
+}
+
+#std_img img {
+    height: 80px;
+    width: 80px;
+}
+
+#std_img {
+    height: 95px;
+    width: 95px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid #dcdcdc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#std_profile {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 50px;
+    width: 130px;
+    float: right;
+}
