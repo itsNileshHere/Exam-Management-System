@@ -34,7 +34,7 @@ include "assets/navbar.php"
                         <thead>
                             <tr>
                                 <th style="display:none;">Admnin ID</th>
-                                <th class="text-center" width="15%">Profile Pic</th>
+                                <th class="text-center" width="15%">Profile Picture</th>
                                 <th class="text-center" width="25%">Full Name</th>
                                 <th class="text-center" width="20%">Contact No</th>
                                 <th class="text-center" width="20%">Email ID</th>

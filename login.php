@@ -76,8 +76,8 @@ session_start();
                                 <div class="text-center text-lg-start mt-4 pt-2">
                                     <input class="btn btn-primary" type="submit" name="std_login_btn" id="std_login_btn" value="Login">
                                     <p style='font-size: .875em;' class='fw-700 mt-2 pt-1 mb-0'>
-                                        <a class='link-danger'>Can't Login?</a>
-                                         Ask admin to add you First!
+                                        <a style="color: #f93154;">Can't Login?</a>
+                                        Ask to add you First!
                                     </p>
                                 </div>
                             </form>

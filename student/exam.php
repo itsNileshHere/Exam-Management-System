@@ -62,23 +62,41 @@ include "assets/navbar.php";
                                     <td class="text-center"><?php echo $res['exam_time_limit'] ?> Minutes</td>
                                     <td class="text-center">Updated Soon</td>
                                     <?php
+
+                                    $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$row['std_name']}' AND `exam_name` = '{$res['exam_title']}'";
+                                    $query1 = mysqli_query($db, $selectquery1);
+                                    $row1 = mysqli_fetch_array($query1);
+
                                     $status = "";
-                                    if ($res['status'] == "Pending")
-                                        $status = "<span class='badge badge-warning'>Pending</span>";
-                                    if ($res['status'] == "Started")
-                                        $status = "<span class='badge badge-success'>Started</span>";
-                                    if ($res['status'] == "Ended")
-                                        $status = "<span class='badge badge-secondary'>Ended</span>";
+                                    if (mysqli_num_rows($query1) > 0) {
+                                        if ($row1['attendence_status'] == "Ended") {
+                                            $status = "<span class='badge badge-secondary'>Ended</span>";
+                                        } else {
+                                            if ($res['status'] == "Pending")
+                                                $status = "<span class='badge badge-warning'>Pending</span>";
+                                            if ($res['status'] == "Started")
+                                                $status = "<span class='badge badge-success'>Started</span>";
+                                        }
+                                    } else {
+                                        if ($res['status'] == "Pending")
+                                            $status = "<span class='badge badge-warning'>Pending</span>";
+                                        if ($res['status'] == "Started")
+                                            $status = "<span class='badge badge-success'>Started</span>";
+                                        if ($res['status'] == "Ended")
+                                            $status = "<span class='badge badge-secondary'>Ended</span>";
+                                    }
                                     ?>
                                     <td class="text-center" id="exam_status"><?php echo $status ?></td>
                                     <td class="text-center"><?php echo $res['exam_date'] . ' ' . $res['exam_time']; ?></td>
                                     <td class="text-center" style="padding-right: 2px;"><a class="butn butn-success exam_details_btn">Details</a></td>
                                     <?php
-                                    $disable = "";
-                                    if ($res['status'] != "Started")
-                                        $disable = "disabled";
+                                    if ($status == "<span class='badge badge-warning'>Pending</span>")
+                                        echo '<td class="text-center" style="padding-left: 2px;"><a class="butn butn-danger exam_start_btn disabled">Start</a></td>';
+                                    else if ($status == "<span class='badge badge-success'>Started</span>")
+                                        echo '<td class="text-center" style="padding-left: 2px;"><a class="butn butn-danger exam_start_btn">Start</a></td>';
+                                    else if ($status == "<span class='badge badge-secondary'>Ended</span>")
+                                        echo '<td class="text-center" style="padding-left: 2px;"><a class="butn butn-results show_results_btn">Resullt</a></td>';
                                     ?>
-                                    <td class="text-center" style="padding-left: 2px;"><a class="butn butn-danger exam_start_btn <?php echo $disable ?>" data-toggle="modal" data-target="#examConfirmationModal">Start</a></td>
                                 </tr>
                         <?php
                             }
@@ -117,6 +135,19 @@ include "assets/navbar.php";
                 }
             });
             onclick = window.open('start_exam.php', '_self');
+        });
+
+        $('.show_results_btn').on('click', function(e) {
+            var exam_id = $(this).closest('tr').find('#exam_id').text();
+            $.ajax({
+                type: 'POST',
+                url: 'assets/data.php',
+                data: {
+                    'show_results_btn': true,
+                    'exam_id': exam_id
+                }
+            });
+            onclick = window.open('result.php', '_self');
         });
     </script>
 

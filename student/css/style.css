@@ -149,6 +149,17 @@ a.butn:hover {
 
 }
 
+.butn-results {
+    color: #fff;
+    background-color: #684999;
+    border: 1px solid #684999;
+}
+
+.butn-results:hover {
+    color: #fff;
+    background-color: #563c80;
+}
+
 #exam_box tbody .butn {
     font-size: 14px;
     font-weight: 700;
@@ -668,13 +679,65 @@ input[type=number]::-webkit-outer-spin-button {
 /* -------------- home.php -------------- */
 
 .box-container.exams-view {
-    width: 28%;
-    height: 20rem;
+    width: 340px;
+    height: 310px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 0;
 }
 
 .exams-view .card-header {
     background-color: #27a127;
     color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.exams-view .card-containts {
+    margin: 20px 25px 20px;
+}
+
+.exams-view .card-containts p {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.exams-view #details_btn,
+.exams-view #results_btn {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.exams-view #details_btn button {
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.exams-view .show_results_btn {
+    color: #fff;
+    background-color: #684999;
+    border: 1px solid #684999;
+    border-radius: 20px;
+}
+
+.exams-view .show_results_btn:hover {
+    color: #fff;
+    background-color: #563c80;
+}
+
+.exams-view .show_results_btn:focus {
+    background-color: #563c80;
+    box-shadow: 0 0 0 0.25rem rgba(95, 62, 150, 0.5);
+}
+
+.exams-view .show_results_btn:active:focus {
+    box-shadow: 0 0 0 0.2rem rgb(95, 62, 150, 0.5)
+}
+
+.exams-view #details_btn i,
+.exams-view #results_btn i {
+    font-size: 15px;
 }
 
 #student_details {
@@ -706,4 +769,279 @@ input[type=number]::-webkit-outer-spin-button {
     height: 50px;
     width: 130px;
     float: right;
+}
+
+/* -------------- result.php -------------- */
+
+#result-wrapper {
+    height: 918px;
+    width: 796px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #000;
+    box-shadow: 0 0 7px rgb(0 0 0 / 30%);
+}
+
+.result-box {
+    border: 1px solid #000;
+    height: 840px;
+    width: 720px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result-box #exam_title {
+    margin: 40px 10px 20px;
+    font-size: 34px;
+    color: #1175af;
+    font-weight: 600;
+    font-family: Georgia, serif;
+    word-spacing: 5px;
+}
+
+.result-box #head {
+    margin: 20px 0 20px;
+    height: 158px;
+    background-color: #595959;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 17px;
+}
+
+.result-box .devider {
+    width: 100%;
+    border-bottom: 5px solid blue;
+}
+
+.result-box #head span {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.result-box #head p {
+    margin: 5px 0 5px;
+}
+
+.result-box #head .left {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-right: 1px solid #fff;
+    padding: 15px 10px 15px;
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.result-box #head .right {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 15px 10px 15px;
+    height: 100%;
+    width: 50%;
+    float: right;
+}
+
+.result-box #ribbon {
+    position: relative;
+    background-color: #0092c7;
+    color: #fff;
+    height: 50px;
+    width: 60%;
+    margin: 20px 10px 20px;
+}
+
+.result-box #ribbon .ribbonA {
+    position: absolute;
+    top: 6px;
+    left: -18px;
+    width: 37px;
+    height: 37px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-bottom-left-radius: 100%;
+}
+
+.result-box #ribbon .ribbonB {
+    position: absolute;
+    top: 7px;
+    right: -18px;
+    width: 35.5px;
+    height: 35.5px;
+    background-color: #0092c7;
+    transform: rotate(45deg);
+    border-bottom-left-radius: 100%;
+}
+
+.result-box #ribbon p {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.result-box #marks_body {
+    height: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #000;
+}
+
+.result-box #marks_body span {
+    font-weight: 700;
+}
+
+.result-box #marks_body #pos {
+    width: 50%;
+    float: left;
+    border-right: 1px solid green;
+    padding: 15px 10px 15px;
+}
+
+.result-box #marks_body #neg {
+    width: 50%;
+    float: right;
+    border-left: 1px solid green;
+    padding: 15px 10px 15px;
+}
+
+.result-box #table_body {
+    text-align: center;
+    font-size: 14px;
+}
+
+.result-box #table_body thead {
+    font-size: 13px;
+    background-color: #0092c7;
+    color: #fff;
+    font-weight: 700;
+}
+
+.result-box #table_body thead th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    vertical-align: middle;
+}
+
+.result-box #table_body tbody {
+    background-color: #9BF3F3;
+    color: #000;
+    font-weight: 600;
+}
+
+.result-box #table_body tbody td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+}
+
+.result-box #table_body thead #NA {
+    padding-left: 0;
+    padding-right: 0;
+    width: 16%;
+}
+
+.print-butn {
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    height: 85px;
+}
+
+.print-butn button{
+    font-weight: 600;
+}
+
+.print-butn #print_btn {
+    margin-left: 5px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* -------------- exam_result.php -------------- */
+
+.res_wrap {
+    margin-top: 140px;
+    background-color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#exam_ribbon {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 42rem;
+    height: 55px;
+    background-color: blue;
+    color: white;
+}
+
+#exam_ribbon p {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#exam_ribbon::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-bottom-left-radius: 100%;
+}
+
+#exam_ribbon::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-top-right-radius: 100%;
+}
+
+#exam_res {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 34px;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+}
+
+#exam_res p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#exam_res span {
+    color: purple;
+}
+
+.res_wrap #buttons {
+    width: 100%;
+    text-align: center;
+}
+
+#buttons button {
+    margin: 8px;
 }

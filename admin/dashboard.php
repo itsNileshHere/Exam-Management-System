@@ -34,7 +34,17 @@ include "assets/navbar.php"
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     Result Published</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+
+                                <?php
+                                $dash_result_query = "SELECT * FROM `add_exam` WHERE `status`='Ended'";
+                                $dash_result_query_run = mysqli_query($db, $dash_result_query);
+                                if ($results = mysqli_num_rows($dash_result_query_run)) {
+                                    echo '<div class="h5 mb-0 font-weight-bold text-gray-800">' . $results . '</div>';
+                                } else {
+                                    echo '<div class="h5 mb-0 font-weight-bold text-gray-800">0</div>';
+                                }
+                                ?>
+
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-award fa-2x text-gray-300"></i>

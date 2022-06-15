@@ -32,12 +32,26 @@ if (!isset($_SESSION['exam_id'])) {
                 <div class="card-header">Exam Details
                     <div class="exam-start-btn">
                         <?php
+                        $stdsel = "SELECT * FROM `add_student` WHERE `std_id` = '{$_SESSION["std_id"]}'";
+                        $stdselquery = mysqli_query($db, $stdsel);
+                        $row2 = mysqli_fetch_array($stdselquery);
+
                         $sql1 = "SELECT * FROM `add_exam` WHERE `exam_id` = '{$_SESSION['exam_id']}'";
                         $result1 = mysqli_query($db, $sql1);
                         $row = mysqli_fetch_array($result1);
+
+                        $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$row2['std_name']}' AND `exam_name` = '{$row['exam_title']}'";
+                        $query1 = mysqli_query($db, $selectquery1);
+                        $row1 = mysqli_fetch_array($query1);
+
+                        $exam_start_TD = date('jS F Y h:i A', strtotime($row['exam_date'] . ' ' . $row['exam_time']));
                         $status = '';
-                        if ($row['status'] != 'Started')
+                        if (mysqli_num_rows($query1) > 0) {
+                            if ($row1['attendence_status'] == "Ended")
+                                $status = 'disabled';
+                        } else if ($row['status'] != 'Started') {
                             $status = 'disabled';
+                        }
                         ?>
                         <a onclick="window.open('start_exam.php','_self')" class="butn butn-danger <?php echo $status ?>">Start</a>
                     </div>
@@ -99,7 +113,7 @@ if (!isset($_SESSION['exam_id'])) {
                     <div class="row form-group form-pad" style="margin-bottom: 10px;">
                         <label class="col col-form-label fw-600" for="exam_date_time">Exam Date & Time :</label>
                         <div class="col-9">
-                            <input type="text" class="form-control color-gray" name="exam_date_time" required value="<?php echo $row['exam_date'] . ' ' . $row['exam_time']; ?>" disabled>
+                            <input type="text" class="form-control color-gray" name="exam_date_time" required value="<?php echo $exam_start_TD; ?>" disabled>
                         </div>
                     </div>
 

@@ -122,11 +122,7 @@ include "assets/navbar.php"
         <br>
     </div>
     </div>
-
-    <?php
-    include "assets/footer.php"
-    ?>
-
+    
     <!-- -------------------- DatePicker Script --------------- -->
 
     <script type="text/javascript">

@@ -1,0 +1,79 @@
+<?php
+include "assets/connection.php";
+include "assets/header.php";
+@session_start();
+if (!isset($_SESSION['exam_id'])) {
+    echo "<script>history.back();</script>";
+    die();
+}
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Result Page</title>
+
+    <script disable-devtool-auto src='js/disable-devtools.js'></script>
+
+</head>
+
+<body>
+    <div id="wrapper" style="user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none;">
+        <script type="text/javascript">
+            $(document).ready(function() {
+                getdata();
+            });
+
+            function getdata() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'assets/data.php',
+                    data: {
+                        'show_results': true,
+                        'std_id': "<?php echo $_SESSION['std_id'] ?>",
+                        'exam_id': "<?php echo $_SESSION['exam_id'] ?>",
+                    },
+                    success: function(response) {
+                        $("#wrapper").html("")
+                        $("#wrapper").html(response)
+                    }
+                });
+            }
+        </script>
+    </div>
+
+    <div class="print-butn">
+        <button class="btn btn-success" id="print_btn">Save as PDF</button>
+        <button class="btn btn-primary" onclick="window.open('home.php', '_self');">Back to Home</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        $('#print_btn').click(function(e) {
+            e.preventDefault();
+            var element = document.getElementById('result-box');
+            let r = (Math.random() + 1).toString(36).substring(7);
+            var opt = {
+                margin: [0, -0.17, 0, 0],
+                filename: r + '.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 5
+                },
+                jsPDF: {
+                    unit: 'in',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
+            };
+            html2pdf().set(opt).from(element).save();
+        });
+    </script>
+
+</body>
+
+</html>

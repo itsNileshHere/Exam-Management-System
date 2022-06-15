@@ -17,6 +17,8 @@ if (!isset($_SESSION['exam_id'])) {
     <!-- ---------------- Sweet Alert -------------- -->
     <script src="js/sweetalert.js"></script>
 
+    <script disable-devtool-auto src='js/disable-devtools.js'></script>
+
 </head>
 
 <body>
@@ -57,7 +59,7 @@ if (!isset($_SESSION['exam_id'])) {
                                 $i = $i + 1;
                         ?>
                                 <div class="qton" id="<?php echo $i ?>">
-                                    <p id="question" class="<?php echo $i ?>"><?php echo "{$res3['question']} ?" ?></p>
+                                    <p id="question" class="<?php echo $i ?>"><?php echo "{$res3['question']}" ?></p>
 
                                     <div id="answer" class="<?php echo $i ?>">
                                         <form>
@@ -129,7 +131,7 @@ if (!isset($_SESSION['exam_id'])) {
             if (total < 1) {
                 $("#exam_timer").TimeCircles().destroy();
                 alert('Exam Time Completed');
-                window.open('exam.php', '_self');
+                window.open('exam_result.php', '_self');
             }
         });
 
@@ -195,7 +197,7 @@ if (!isset($_SESSION['exam_id'])) {
                             swal("Success", "Exam Submitted Successfully", "success", {
                                 timer: 2000
                             }).then(function() {
-                                window.location.href = "exam.php";
+                                window.location.href = "exam_result.php";
                             })
                         }
                     });
