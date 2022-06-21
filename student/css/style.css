@@ -1045,3 +1045,86 @@ input[type=number]::-webkit-outer-spin-button {
 #buttons button {
     margin: 8px;
 }
+
+/* -------------- exam_result.php -------------- */
+
+.answer_sheet {
+    border: 1px solid #000;
+    height: 840px;
+    width: 720px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    padding-right: 8px;
+}
+
+.answer_sheet #questions {
+    color: #000;
+    font-weight: 600;
+    font-size: 17.4px;
+    margin-bottom: 8px;
+}
+
+.answer_sheet #answers {
+    color: #000;
+    font-size: 16px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+}
+
+.answer_sheet #answers img {
+    height: 18px;
+    width: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 18px;
+    margin-right: 8px;
+}
+
+.answer_sheet #answers p {
+    margin: 2px;
+}
+
+.answer_sheet #answers .correct-green {
+    background-color: #41db41;
+}
+
+.answer_sheet #answers .wrong-red {
+    background-color: #fd8282;
+}
+
+.scroll-div {
+    height: auto;
+    max-height: 810px;
+    overflow-y: scroll;
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.3s;
+    cursor: default;
+}
+
+.scroll-div:hover {
+    color: rgba(0, 0, 0, 0.4);
+    overflow-y: scroll;
+}
+
+.scroll-div::-webkit-scrollbar {
+    width: 7px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 1px solid #fff;
+    border-radius: 10rem;
+    box-shadow: inset 0 0 0 10px;
+}
+
+.scroll-div::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.scroll-div::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

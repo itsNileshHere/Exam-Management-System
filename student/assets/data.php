@@ -121,7 +121,7 @@ if (isset($_POST['show_results'])) {
         }
     }
 
-    $output .= '<div id="result-wrapper">
+    $output .= '<div id="result-wrapper"  style="user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none;">
                     <div class="result-box" id="result-box">
                         <P id="exam_title">' . $res1['exam_title'] . '</P>
                         <div id="head">

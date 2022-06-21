@@ -19,7 +19,7 @@ if (!isset($_SESSION['exam_id'])) {
 </head>
 
 <body>
-    <div id="wrapper" style="user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none;">
+    <div id="wrapper">
         <script type="text/javascript">
             $(document).ready(function() {
                 getdata();
