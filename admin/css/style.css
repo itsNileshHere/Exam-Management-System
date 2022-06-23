@@ -90,8 +90,9 @@ tbody tr td .fa-trash {
 /* ------------------ navbar ------------------ */
 
 #content-wrapper #content h2 {
-    color: black;
+    color: rgba(71, 71, 71, 0.884);
     font-size: 26px;
+    cursor: default;
 }
 
 /* ----------------- logout ----------------- */
@@ -285,10 +286,11 @@ tbody tr td .fa-trash {
 
 .box-container {
     border-radius: 10px;
-    height: 560px;
+    height: 540px;
     background-color: white;
     color: black;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    margin-bottom: 20px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
 }
 

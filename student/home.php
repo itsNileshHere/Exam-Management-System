@@ -109,6 +109,10 @@ include "assets/navbar.php";
         });
     </script>
 
+    <?php
+    include "assets/query_update.php"
+    ?>
+
 </body>
 
 </html>

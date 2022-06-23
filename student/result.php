@@ -14,6 +14,9 @@ if (!isset($_SESSION['exam_id'])) {
 
     <title>Result Page</title>
 
+    <!-- ---------------- Sweet Alert -------------- -->
+    <script src="js/sweetalert.js"></script>
+
     <script disable-devtool-auto src='js/disable-devtools.js'></script>
 
 </head>
@@ -44,8 +47,38 @@ if (!isset($_SESSION['exam_id'])) {
     </div>
 
     <div class="print-butn">
-        <button class="btn btn-success" id="print_btn">Save as PDF</button>
-        <button class="btn btn-primary" onclick="window.open('home.php', '_self');">Back to Home</button>
+        <?php
+        // add_exam Table
+        $sql1 = "SELECT * FROM `add_exam` WHERE `exam_id` = '{$_SESSION['exam_id']}'";
+        $result1 = mysqli_query($db, $sql1);
+        $res1 = mysqli_fetch_array($result1);
+
+        // add_student Table
+        $sql3 = "SELECT * FROM `add_student` WHERE `std_id` = '{$_SESSION['std_id']}'";
+        $result3 = mysqli_query($db, $sql3);
+        $res3 = mysqli_fetch_array($result3);
+
+        // std_exam_status Table
+        $sql4 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$res3['std_name']}' AND `exam_name` = '{$res1['exam_title']}'";
+        $result4 = mysqli_query($db, $sql4);
+        $row4 = mysqli_fetch_row($result4);
+        if ($row4 > 0) { ?>
+            <button class="btn btn-success" id="print_btn">Save as PDF</button>
+            <button class="btn btn-primary" id="back_btn" onclick="window.open('home.php', '_self');">Back to Home</button>
+            <button class="btn btn-primary" id="detailed_result" onclick="window.open('answer_script.php', '_self');">Detailed Result</button>
+        <?php } else {
+        ?>
+            <button class="btn btn-primary" id="back_btn" onclick="window.open('home.php', '_self');">Back to Home</button>
+            <script>
+                swal({
+                    title: "Oh Snap!",
+                    text: "Looks Like You haven't attended the Exam",
+                    icon: "warning",
+                })
+            </script>
+        <?php
+        }
+        ?>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

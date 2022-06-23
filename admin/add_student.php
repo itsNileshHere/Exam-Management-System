@@ -29,7 +29,7 @@ include "assets/navbar.php"
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid pr-5 pl-5">
         <h3>Add Student</h3>
         <div class="box-container">
             <div class="card-header">Enter Student Details</div>
@@ -38,14 +38,14 @@ include "assets/navbar.php"
             <form id="add_student" name="add_student" action="" method="POST">
 
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label" for="std_name">Student Name :</label>
+                    <label class="col-sm-3 col-form-label fw-600" for="std_name">Student Name :</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="std_name" placeholder="Input Student Name" required>
                     </div>
                 </div>
 
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Gender :</label>
+                    <label class="col-sm-3 col-form-label fw-600">Gender :</label>
                     <div class="col-sm-9">
                         <select class="form-control" name="gender" required>
                             <option value="" selected disabled hidden>Select</option>
@@ -56,7 +56,7 @@ include "assets/navbar.php"
                 </div>
 
                 <div class="row mb-3 form-group">
-                    <label class="col-sm-3 col-form-label" for="birth_date">Date of Birth :</label>
+                    <label class="col-sm-3 col-form-label fw-600" for="birth_date">Date of Birth :</label>
                     <div class="col-sm-9">
                         <div class="input-group date" id="datepicker">
                             <input style="border-radius: 5px;" type="text" class="form-control" name="birth_date" placeholder="DD-MM-YYYY" required>
@@ -67,7 +67,7 @@ include "assets/navbar.php"
                 </div>
 
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Course Name :</label>
+                    <label class="col-sm-3 col-form-label fw-600">Course Name :</label>
                     <div class="col-sm-9">
                         <?php
                         $query2 = "SELECT * FROM `add_course` WHERE `status`='Enabled'";
@@ -87,7 +87,7 @@ include "assets/navbar.php"
                 </div>
 
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Year Level :</label>
+                    <label class="col-sm-3 col-form-label fw-600">Year Level :</label>
                     <div class="col-sm-9">
                         <select class="form-control" name="year_lvl" required>
                             <option value="" selected disabled hidden>Select</option>
@@ -100,14 +100,14 @@ include "assets/navbar.php"
                 </div>
 
                 <div class="row mb-3 form-group" style="padding-bottom: 5px;">
-                    <label class="col-sm-3 col-form-label" for="email_id">Email ID :</label>
+                    <label class="col-sm-3 col-form-label fw-600" for="email_id">Email ID :</label>
                     <div class="col-sm-9">
                         <input type="email" class="form-control" name="email_id" placeholder="Input Email ID" required>
                     </div>
                 </div>
 
                 <div class="row mb-3 form-group" style="padding-bottom: 5px;">
-                    <label class="col-sm-3 col-form-label" for="password">Password :</label>
+                    <label class="col-sm-3 col-form-label fw-600" for="password">Password :</label>
                     <div class="col-sm-9">
                         <input type="password" class="form-control" name="password" placeholder="Input Password" required>
                     </div>

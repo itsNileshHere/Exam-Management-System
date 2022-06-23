@@ -46,7 +46,7 @@ include "assets/navbar.php";
                                 <th style="display:none;">Exam ID</th>
                                 <th class="pl-4">Exam Name</th>
                                 <th class="text-center">Exam Duration</th>
-                                <th class="text-center">Result Date & Time</th>
+                                <th class="text-center">Result Status</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Timetable</th>
                                 <th class="text-center" colspan="2">Action</th>
@@ -60,9 +60,14 @@ include "assets/navbar.php";
                                     <td id="exam_id" style="display:none;"><?php echo $res['exam_id'] ?></td>
                                     <td class="pl-4"><?php echo $res['exam_title'] ?></td>
                                     <td class="text-center"><?php echo $res['exam_time_limit'] ?> Minutes</td>
-                                    <td class="text-center">Updated Soon</td>
+                                    <td class="text-center"><?php
+                                                            if ($res['status'] == 'Pending' || $res['status'] == 'Started') {
+                                                                echo 'Updated Soon';
+                                                            } else if ($res['status'] == 'Ended') {
+                                                                echo 'Published';
+                                                            }
+                                                            ?></td>
                                     <?php
-
                                     $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$row['std_name']}' AND `exam_name` = '{$res['exam_title']}'";
                                     $query1 = mysqli_query($db, $selectquery1);
                                     $row1 = mysqli_fetch_array($query1);
@@ -151,6 +156,9 @@ include "assets/navbar.php";
         });
     </script>
 
+    <?php
+    include "assets/query_update.php"
+    ?>
 
 </body>
 

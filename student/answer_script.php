@@ -2,10 +2,10 @@
 include "assets/connection.php";
 include "assets/header.php";
 @session_start();
-// if (!isset($_SESSION['exam_id'])) {
-//     echo "<script>history.back();</script>";
-//     die();
-// }
+if (!isset($_SESSION['exam_id'])) {
+    echo "<script>history.back();</script>";
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,8 @@ include "assets/header.php";
 
 <body>
     <div id="wrapper">
-        <div id="result-wrapper">
+        <div id="result-answer-wrapper">
+            <button class="btn btn-primary back_btn" onclick="history.back()">Go Back</button>
             <div class="answer_sheet">
                 <div class="scroll-div">
                     <?php
@@ -35,13 +36,13 @@ include "assets/header.php";
 
                     // Joining add_exam with exam_answers
                     $sql2 = "SELECT add_question.question, add_question.ans_1, add_question.ans_2, add_question.ans_3, add_question.ans_4, exam_answers.answered, add_question.correct_answer, add_exam.correct, add_exam.wrong
-                FROM `exam_answers`
-                INNER JOIN `add_exam`
-                ON exam_answers.exam_title = add_exam.exam_title
-                INNER JOIN `add_question`
-                ON exam_answers.question = add_question.question
-                AND exam_answers.exam_title = add_question.exam_title
-                WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_name = '{$res3['std_name']}'";
+                    FROM `exam_answers`
+                    INNER JOIN `add_exam`
+                    ON exam_answers.exam_title = add_exam.exam_title
+                    INNER JOIN `add_question`
+                    ON exam_answers.question = add_question.question
+                    AND exam_answers.exam_title = add_question.exam_title
+                    WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_name = '{$res3['std_name']}'";
 
                     $result2 = mysqli_query($db, $sql2);
                     $i = 0;

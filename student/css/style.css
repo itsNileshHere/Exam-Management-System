@@ -950,8 +950,7 @@ input[type=number]::-webkit-outer-spin-button {
 .print-butn {
     position: absolute;
     top: 45px;
-    left: 60px;
-    height: 85px;
+    left: 50px;
 }
 
 .print-butn button{
@@ -959,8 +958,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .print-butn #print_btn {
-    margin-left: 5px;
+    margin-left: 30px;
     margin-bottom: 8px;
+    display: block;
+}
+
+.print-butn #back_btn {
+    margin-left: 25px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.print-butn #detailed_result {
+    margin-left: 20px;
     display: block;
 }
 
@@ -1046,11 +1056,29 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 8px;
 }
 
-/* -------------- exam_result.php -------------- */
+/* -------------- answer_script.php -------------- */
+
+#result-answer-wrapper {
+    height: 958px;
+    width: 796px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #000;
+    box-shadow: 0 0 7px rgb(0 0 0 / 30%);
+}
+
+#result-answer-wrapper .back_btn {
+    position: absolute;
+    top: 60px;
+    left: 75px;
+    font-weight: 600;
+}
 
 .answer_sheet {
     border: 1px solid #000;
-    height: 840px;
+    height: 880px;
     width: 720px;
     margin-top: 35px;
     margin-left: auto;
@@ -1096,7 +1124,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .scroll-div {
     height: auto;
-    max-height: 810px;
+    max-height: 850px;
     overflow-y: scroll;
     color: rgba(0, 0, 0, 0);
     transition: color 0.3s;
@@ -1127,4 +1155,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .scroll-div::-webkit-scrollbar-corner {
     background-color: transparent;
+}
+
+.not-attended {
+    font-size: 35px;
+    width: 700px;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    font-weight: 600;
 }

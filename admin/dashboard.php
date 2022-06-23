@@ -167,10 +167,6 @@ include "assets/navbar.php"
     </div>
     </div>
 
-    <?php
-    include "assets/footer.php";
-    ?>
-
 </body>
 
 </html>

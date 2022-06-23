@@ -1,13 +1,13 @@
 <?php
 include "admin/assets/connection.php";
-session_start();
+@session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Index</title>
+    <title>Exam Management System</title>
     <!-- Custom CSS -->
     <link href="style.css?version=1" rel="stylesheet" type="text/css">
 
@@ -37,8 +37,8 @@ session_start();
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75">Utilize your skills with Objective, Descriptive and Coding Tests!</p>
-                    <p class="text-white-75 mb-5"> Make youself ready for any Tests.</p>
+                    <p class="text-white-75">Utilize your skills with Objective and Descriptive Tests!</p>
+                    <p class="text-white-75 mb-5"> Make youself ready for any Exams.</p>
                     <a class="btn btn-primary btn-xl" href="login.php">Get Started</a>
                 </div>
             </div>
@@ -50,9 +50,10 @@ session_start();
         <div class="container px-4">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">We've got what you need!</h2>
+                    <h2 class="text-white mt-0">About This Project</h2>
                     <hr class="divider divider-light" />
                     <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                    <p class="text-white mb-4">Follow Me on :</p>
                 </div>
             </div>
         </div>
@@ -84,6 +85,11 @@ session_start();
             }
         });
     </script>
+
+    <?php
+    include "student/assets/query_update.php";
+    ?>
+
 </body>
 
 </html>

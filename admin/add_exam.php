@@ -27,7 +27,7 @@ include "assets/navbar.php"
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid pr-5 pl-5">
         <h3>Add Examination</h3>
         <div class="box-container">
             <div class="card-header">Enter Exam Details</div>
@@ -36,7 +36,7 @@ include "assets/navbar.php"
 
                 <div style="padding-right: 12px;">
                     <div class="row mb-3">
-                        <label class="col-sm-3 col-form-label">Course :</label>
+                        <label class="col-sm-3 col-form-label fw-600">Course :</label>
                         <div class="col-sm-9">
                             <?php
                             $query2 = "SELECT * FROM `add_course` WHERE `status`='Enabled'";
@@ -56,7 +56,7 @@ include "assets/navbar.php"
                     </div>
 
                     <div class="row mb-3 form-group">
-                        <label class="col-sm-3 col-form-label">Exam Time Limit :</label>
+                        <label class="col-sm-3 col-form-label fw-600">Exam Time Limit :</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="exam_time_limit" required>
                                 <option value="" selected disabled hidden>Select</option>
@@ -71,7 +71,7 @@ include "assets/navbar.php"
                     </div>
 
                     <div class="row mb-3 form-group">
-                        <label class="col-sm-3 col-form-label">Total Question :</label>
+                        <label class="col-sm-3 col-form-label fw-600">Total Question :</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="total_question" required>
                                 <option value="" selected disabled hidden>Select</option>
@@ -87,7 +87,7 @@ include "assets/navbar.php"
                     </div>
 
                     <div class="row mb-3 form-group">
-                        <label class="col-sm-3 col-form-label">Marks for Correct Answer :</label>
+                        <label class="col-sm-3 col-form-label fw-600">Marks for Correct Answer :</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="marks_per_correct_answer" required>
                                 <option value="" selected disabled hidden>Select</option>
@@ -101,7 +101,7 @@ include "assets/navbar.php"
                     </div>
 
                     <div class="row mb-3 form-group">
-                        <label class="col-sm-3 col-form-label">Marks for Wrong Answer :</label>
+                        <label class="col-sm-3 col-form-label fw-600">Marks for Wrong Answer :</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="marks_per_wrong_answer" required>
                                 <option value="" selected disabled hidden>Select</option>
@@ -113,7 +113,7 @@ include "assets/navbar.php"
                     </div>
 
                     <div class="row mb-3 form-group">
-                        <label class="col-sm-3 col-form-label" for="exam_title">Exam Title :</label>
+                        <label class="col-sm-3 col-form-label fw-600" for="exam_title">Exam Title :</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="exam_title" placeholder="Input Exam Title" required>
                         </div>
@@ -121,7 +121,7 @@ include "assets/navbar.php"
                 </div>
 
                 <div class="row mb-3 form-group" style="padding-bottom: 5px;">
-                    <label class="col-sm-3 col-form-label" for="exam_date_time">Exam Date & Time :</label>
+                    <label class="col-sm-3 col-form-label fw-600" for="exam_date_time">Exam Date & Time :</label>
                     <div class="row col-sm-9" style="padding-right: 0px; padding-left:8px">
                         <div class="col">
                             <div class="input-group date" id="datepicker">
