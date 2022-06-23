@@ -3,7 +3,7 @@
 Online Exam Management System Using Php, CSS and JavaScript
 
 
-## Authors
+### By -
 
 - [@PROFESSOR](https://www.github.com/X-PROFESSOR)
 
