@@ -978,7 +978,8 @@ pre code {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #6e707e;
+    /* color: #6e707e; */
+    color: #4d4f5a;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #d1d3e2;
@@ -1003,7 +1004,8 @@ pre code {
 }
 
 .form-control:focus {
-    color: #6e707e;
+    /* color: #6e707e; */
+    color: #4d4f5a;
     background-color: #fff;
     border-color: #bac8f3;
     outline: 0;

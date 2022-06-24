@@ -10,11 +10,7 @@ include "assets/navbar.php";
 
     <title>Profile Info</title>
 
-    <!-- ------------------- DatePicker ------------------- -->
-    <link href="css/bootstrap-datepicker.css?version=1" rel="stylesheet" type="text/css">
-    <script src="js/bootstrap.datepicker.js"></script>
-
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 
@@ -56,6 +52,7 @@ include "assets/navbar.php";
                             $result2 = mysqli_query($db, $sql2);
                             if (mysqli_num_rows($result2) > 0) {
                                 while ($row = mysqli_fetch_array($result2)) {
+                                    $Bdate = date('Y-m-d', strtotime($row['dob']));
                             ?>
                                     <div style="padding-bottom: 5px;">
                                         <label style="font-size:12px; font-weight:600">Name</label>
@@ -63,11 +60,7 @@ include "assets/navbar.php";
                                     </div>
                                     <div style="padding-bottom: 5px;">
                                         <label style="font-size:12px; font-weight:600">Date of Birth</label>
-                                        <div class="input-group date" id="datepicker">
-                                            <input style="border-radius: 5px;" type="text" name="dob" class="form-control" placeholder="Enter Date of Birth" required value="<?php echo $row['dob']; ?>">
-                                            <div class="input-group-append">
-                                            </div>
-                                        </div>
+                                        <input style="border-radius: 5px;" type="date" name="dob" id="dob" class="form-control" required value="<?php echo $Bdate; ?>">
                                     </div>
                                     <div style="padding-bottom: 5px;">
                                         <label style="font-size:12px; font-weight:600">Email ID</label>
@@ -79,7 +72,7 @@ include "assets/navbar.php";
                                     </div>
                                     <div style="padding-bottom: 10px;">
                                         <label style="font-size:12px; font-weight:600">Password</label>
-                                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" disabled required value="<?php echo $row['password']; ?>">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" autocomplete="on" disabled required value="<?php echo $row['password']; ?>">
                                     </div>
                                     <script src="js/password_icon.js"></script>
                             <?php
@@ -88,7 +81,7 @@ include "assets/navbar.php";
                             ?>
                         </div>
                         <div style="text-align: center; padding-top:10px;">
-                            <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 120px" class="btn btn-primary" type="submit" name="save_profile" value="Save Profile">
+                            <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 120px" class="btn btn-primary" type="submit" name="save_profile" id="save_profile" value="Save Profile">
                         </div>
                     </div>
                 </form>
@@ -97,6 +90,23 @@ include "assets/navbar.php";
         <br>
     </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#dob").click(function() {
+                var placeholderDate = setInterval(function() {
+                    if ($('#dob').length && $('#dob').val().length) {
+                        $('#dob').removeAttr("placeholder");
+                    } else {
+                        $('#dob').attr('placeholder', 'Enter Date of Birth');
+                    }
+                }, 100);
+                $("#save_profile").click(function() {
+                    clearInterval(placeholderDate);
+                });
+            });
+        });
+    </script>
 
     <?php
     if (isset($_POST['save_profile'])) {
@@ -124,8 +134,7 @@ include "assets/navbar.php";
         }
     ?>
 
-        <!-- ------------------ Sweet Alert ------------------ -->
-
+        <!--  Sweet Alert  -->
         <script type="text/javascript">
             swal("Success", "Profile Updated Successfully", "success")
                 .then(function() {
@@ -136,19 +145,7 @@ include "assets/navbar.php";
     }
     ?>
 
-    <!-- -------------------- DatePicker Script --------------- -->
-
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker()
-                .on('changeDate', function(ev) {
-                    $('#datepicker').datepicker('hide');
-                });
-        })
-    </script>
-
     <!-- -------------- pfp update JavaScript ------------ -->
-
     <script type="text/javascript">
         const imgDiv = document.querySelector('.profile-pic-div');
         const img = document.querySelector('#pfpphoto');

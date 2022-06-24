@@ -16,11 +16,7 @@ include "assets/navbar.php"
 
     <title>Add Exam</title>
 
-    <!-- ------------------- DatePicker ------------------- -->
-    <link href="css/bootstrap-datepicker.css?version=1" rel="stylesheet" type="text/css">
-    <script src="js/bootstrap.datepicker.js"></script>
-
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 </head>
@@ -124,41 +120,56 @@ include "assets/navbar.php"
                     <label class="col-sm-3 col-form-label fw-600" for="exam_date_time">Exam Date & Time :</label>
                     <div class="row col-sm-9" style="padding-right: 0px; padding-left:8px">
                         <div class="col">
-                            <div class="input-group date" id="datepicker">
-                                <input style="border-radius: 5px;" type="text" class="form-control" name="exam_date" placeholder="DD-MM-YYYY" required>
-                                <div class="input-group-append">
-                                </div>
-                            </div>
+                            <input type="date" class="form-control" name="exam_date" id="exam_date" placeholder="DD-MMM-YYYY" style="border-radius: 5px;" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" name="exam_time" placeholder="HH:MM" required>
+                            <input type="time" class="form-control" name="exam_time" id="exam_time" placeholder="HH:MM AM/PM" required>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; padding-top:10px">
-                    <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 100px" class="btn btn-primary" type="submit" name="add_exam_btn" value="Submit">
+                    <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 100px" class="btn btn-primary" type="submit" name="add_exam_btn" id="add_exam_btn" value="Submit">
                 </div>
-
             </form>
         </div>
         <br>
     </div>
     </div>
 
-    <!-- -------------------- DatePicker Script --------------- -->
-
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker()
-                .on('changeDate', function(ev) {
-                    $('#datepicker').datepicker('hide');
+    <script>
+        $(document).ready(function() {
+            $("#exam_date").click(function() {
+                var placeholderDate = setInterval(function() {
+                    if ($('#exam_date').length && $('#exam_date').val().length) {
+                        $('#exam_date').removeAttr("placeholder");
+                    } else {
+                        $('#exam_date').attr('placeholder', 'DD-MMM-YYYY');
+                    }
+                }, 100);
+                $("#add_exam_btn").click(function() {
+                    clearInterval(placeholderDate);
                 });
-        })
+            });
+        });
+
+        $(document).ready(function() {
+            $("#exam_time").click(function() {
+                var placeholderTime = setInterval(function() {
+                    if ($('#exam_time').length && $('#exam_time').val().length) {
+                        $('#exam_time').removeAttr("placeholder");
+                    } else {
+                        $('#exam_time').attr('placeholder', 'HH:MM AM/PM');
+                    }
+                }, 100);
+                $("#add_exam_btn").click(function() {
+                    clearInterval(placeholderTime)
+                });
+            });
+        });
     </script>
 
     <!-- ---------------- php Code for add_exam ---------------- -->
-
     <?php
     if (isset($_POST['add_exam_btn'])) {
         $exam_default_status = "Pending";

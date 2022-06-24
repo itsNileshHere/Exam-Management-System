@@ -16,7 +16,7 @@ include "assets/navbar.php";
 
     <title>Courses</title>
 
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 </head>

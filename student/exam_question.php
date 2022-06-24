@@ -14,7 +14,7 @@ if (!isset($_SESSION['exam_id'])) {
 
     <title>Exam Question</title>
 
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
     <script disable-devtool-auto src='js/disable-devtools.js'></script>
@@ -28,7 +28,12 @@ if (!isset($_SESSION['exam_id'])) {
             $sql1 = "SELECT * FROM `add_exam` WHERE `exam_id` = '{$_SESSION['exam_id']}'";
             $result1 = mysqli_query($db, $sql1);
             $res1 = mysqli_fetch_array($result1);
-            $remaining_seconds = $res1['exam_time_limit'] * 60;
+
+            date_default_timezone_set('Asia/Kolkata');
+            $exam_start_time = strtotime($res1['exam_time']);
+            $total_second = $res1['exam_time_limit'] * 60;
+            $exam_end_time = date('H:i', ($exam_start_time + $total_second));
+            $remaining_minutes = strtotime($exam_end_time) - time();
 
             include "assets/TimeCircle.php";
             ?>
@@ -100,7 +105,7 @@ if (!isset($_SESSION['exam_id'])) {
                 <div class="pagination-part">
 
                     <!-- ####### Timer ####### -->
-                    <div id="exam_timer" data-timer="<?php echo $remaining_seconds ?>">
+                    <div id="exam_timer" data-timer="<?php echo $remaining_minutes ?>">
 
                     </div>
 
@@ -140,6 +145,7 @@ if (!isset($_SESSION['exam_id'])) {
             qs_no_append();
             $(".qton").not('[id="1"]').addClass("d-none");
 
+            // Pagination Click
             $(document).on("click", ".numID", function() {
                 var page = $(this).attr("id");
                 $(".qton#" + page).removeClass("d-none");
@@ -148,6 +154,19 @@ if (!isset($_SESSION['exam_id'])) {
                 paginationData(page);
             });
 
+            // Radio Btn event Check
+            $("input[name=answer]")
+                .on("click", changeEvent)
+                .on("keydown", changeEvent);
+            function changeEvent(event) {
+                if (event.originalEvent.keyCode == 0) {
+                    answer_submit();
+                } else {
+                    answer_submit();
+                }
+            }
+
+            // Previous Btn Click
             $(document).on("click", "#previous", function() {
                 var qs_no = $(".question_number").attr("id");
                 var page = Number(qs_no) - 1;
@@ -164,6 +183,7 @@ if (!isset($_SESSION['exam_id'])) {
                 paginationData(page);
             })
 
+            // Save Btn click
             $(document).on("click", "#saveNnext", function() {
                 var qs_no = $(".question_number").attr("id");
                 var page = Number(qs_no) + 1;
@@ -184,6 +204,7 @@ if (!isset($_SESSION['exam_id'])) {
                 paginationData(page);
             })
 
+            // Submit Btn click
             $(document).on("click", "#submitPaper", function() {
                 var qs_no = $(".question_number").attr("id");
                 var last_page = <?php echo $total_pages ?>;
@@ -206,6 +227,7 @@ if (!isset($_SESSION['exam_id'])) {
 
             // ######### submit answers #########
             function answer_submit() {
+                var std_id = "<?php echo $_SESSION['std_id'] ?>";
                 var std_name = "<?php echo $res2['std_name'] ?>";
                 var std_email = "<?php echo $res2['email'] ?>";
                 var exam_title = "<?php echo $res1['exam_title'] ?>";
@@ -217,6 +239,7 @@ if (!isset($_SESSION['exam_id'])) {
                     url: "assets/data.php",
                     data: {
                         'exam_ans_submit': true,
+                        'std_id': std_id,
                         'std_name': std_name,
                         'std_email': std_email,
                         'exam_title': exam_title,

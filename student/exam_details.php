@@ -32,15 +32,11 @@ if (!isset($_SESSION['exam_id'])) {
                 <div class="card-header">Exam Details
                     <div class="exam-start-btn">
                         <?php
-                        $stdsel = "SELECT * FROM `add_student` WHERE `std_id` = '{$_SESSION["std_id"]}'";
-                        $stdselquery = mysqli_query($db, $stdsel);
-                        $row2 = mysqli_fetch_array($stdselquery);
-
                         $sql1 = "SELECT * FROM `add_exam` WHERE `exam_id` = '{$_SESSION['exam_id']}'";
                         $result1 = mysqli_query($db, $sql1);
                         $row = mysqli_fetch_array($result1);
 
-                        $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$row2['std_name']}' AND `exam_name` = '{$row['exam_title']}'";
+                        $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_id` = '{$_SESSION['exam_id']}' AND `exam_name` = '{$row['exam_title']}'";
                         $query1 = mysqli_query($db, $selectquery1);
                         $row1 = mysqli_fetch_array($query1);
 
@@ -123,6 +119,19 @@ if (!isset($_SESSION['exam_id'])) {
         </div>
     </div>
 
+    <?php
+    if (mysqli_num_rows($query1) > 0) {
+        if ($row1['attendence_status'] == "Ended") {
+            if (isset($_SESSION['exam_id'])) {
+                unset($_SESSION['exam_id']);
+            }
+        }
+    } else if ($row['status'] != 'Started') {
+        if (isset($_SESSION['exam_id'])) {
+            unset($_SESSION['exam_id']);
+        }
+    }
+    ?>
 </body>
 
 </html>

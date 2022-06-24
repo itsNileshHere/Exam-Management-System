@@ -55,6 +55,11 @@ include "assets/navbar.php";
                         <tbody>
                             <?php
                             while ($res = mysqli_fetch_assoc($query)) {
+
+                                // std_exam_status Table
+                                $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_id` = '{$_SESSION["std_id"]}' AND `exam_name` = '{$res['exam_title']}'";
+                                $query1 = mysqli_query($db, $selectquery1);
+                                $row1 = mysqli_fetch_array($query1);
                             ?>
                                 <tr>
                                     <td id="exam_id" style="display:none;"><?php echo $res['exam_id'] ?></td>
@@ -62,16 +67,18 @@ include "assets/navbar.php";
                                     <td class="text-center"><?php echo $res['exam_time_limit'] ?> Minutes</td>
                                     <td class="text-center"><?php
                                                             if ($res['status'] == 'Pending' || $res['status'] == 'Started') {
-                                                                echo 'Updated Soon';
+                                                                if (mysqli_num_rows($query1) > 0) {
+                                                                    if ($row1['attendence_status'] == "Ended") {
+                                                                        echo 'Published';
+                                                                    }
+                                                                } else {
+                                                                    echo 'Updated Soon';
+                                                                }
                                                             } else if ($res['status'] == 'Ended') {
                                                                 echo 'Published';
                                                             }
                                                             ?></td>
                                     <?php
-                                    $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$row['std_name']}' AND `exam_name` = '{$res['exam_title']}'";
-                                    $query1 = mysqli_query($db, $selectquery1);
-                                    $row1 = mysqli_fetch_array($query1);
-
                                     $status = "";
                                     if (mysqli_num_rows($query1) > 0) {
                                         if ($row1['attendence_status'] == "Ended") {
@@ -92,7 +99,11 @@ include "assets/navbar.php";
                                     }
                                     ?>
                                     <td class="text-center" id="exam_status"><?php echo $status ?></td>
-                                    <td class="text-center"><?php echo $res['exam_date'] . ' ' . $res['exam_time']; ?></td>
+                                    <?php
+                                    $exam_date = date('d-m-Y', strtotime($res['exam_date']));
+                                    $exam_time = date('h:i A', strtotime($res['exam_time']));
+                                    ?>
+                                    <td class="text-center"><?php echo $exam_date . ' ' . $exam_time; ?></td>
                                     <td class="text-center" style="padding-right: 2px;"><a class="butn butn-success exam_details_btn">Details</a></td>
                                     <?php
                                     if ($status == "<span class='badge badge-warning'>Pending</span>")

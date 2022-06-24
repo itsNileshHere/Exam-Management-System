@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2022 at 06:31 AM
+-- Generation Time: Jun 24, 2022 at 06:26 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -75,8 +75,7 @@ CREATE TABLE `add_question` (
   `question_id` int(100) NOT NULL,
   `exam_title` varchar(100) NOT NULL,
   `course` varchar(100) NOT NULL,
-  `exam_qs_id` int(100) NOT NULL,
-  `question` varchar(100) NOT NULL,
+  `question` varchar(10000) NOT NULL,
   `ans_1` varchar(100) NOT NULL,
   `ans_2` varchar(100) NOT NULL,
   `ans_3` varchar(100) NOT NULL,
@@ -123,7 +122,7 @@ CREATE TABLE `admin_reg` (
 --
 
 INSERT INTO `admin_reg` (`adm_id`, `image`, `full_name`, `contact`, `emailid`, `password`, `special_token`) VALUES
-(2, 'uploads/EAztFwu0Hr.jpg', 'Nilesh Mukherjee', '8754963235', 'admin@email', '1234', 'MthPNTKv0n');
+(1, '', 'Nilesh Mukherjee', '8754963235', 'admin@email', '1234', 'MthPNTKv0n');
 
 -- --------------------------------------------------------
 
@@ -146,10 +145,11 @@ CREATE TABLE `assign_course` (
 
 CREATE TABLE `exam_answers` (
   `id` int(100) NOT NULL,
+  `std_id` int(100) NOT NULL,
   `std_name` varchar(100) NOT NULL,
   `std_email` varchar(100) NOT NULL,
   `exam_title` varchar(100) NOT NULL,
-  `question` varchar(100) NOT NULL,
+  `question` varchar(10000) NOT NULL,
   `answered` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -161,6 +161,7 @@ CREATE TABLE `exam_answers` (
 
 CREATE TABLE `std_exam_status` (
   `status_id` int(100) NOT NULL,
+  `std_id` int(100) NOT NULL,
   `std_name` varchar(100) NOT NULL,
   `std_email` varchar(100) NOT NULL,
   `exam_name` varchar(100) NOT NULL,
@@ -233,49 +234,49 @@ ALTER TABLE `std_exam_status`
 -- AUTO_INCREMENT for table `add_class`
 --
 ALTER TABLE `add_class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `add_course`
 --
 ALTER TABLE `add_course`
-  MODIFY `course_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `course_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `add_exam`
 --
 ALTER TABLE `add_exam`
-  MODIFY `exam_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `exam_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `add_question`
 --
 ALTER TABLE `add_question`
-  MODIFY `question_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `question_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `add_student`
 --
 ALTER TABLE `add_student`
-  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `admin_reg`
 --
 ALTER TABLE `admin_reg`
-  MODIFY `adm_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `adm_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `assign_course`
 --
 ALTER TABLE `assign_course`
-  MODIFY `assign_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `assign_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `exam_answers`
 --
 ALTER TABLE `exam_answers`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `std_exam_status`

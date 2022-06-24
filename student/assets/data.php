@@ -40,6 +40,7 @@ if (isset($_POST['get_paginate'])) {
 
 // ########## Answer Submit ##########
 if (isset($_POST['exam_ans_submit'])) {
+    $std_id = $_POST['std_id'];
     $std_name = $_POST['std_name'];
     $std_email = $_POST['std_email'];
     $question = $_POST['question'];
@@ -53,10 +54,10 @@ if (isset($_POST['exam_ans_submit'])) {
     $query3 = mysqli_query($db, $selectquery3);
 
     if (mysqli_num_rows($query3) != 0) {
-        $selectquery4 = "UPDATE `exam_answers` SET `answered`='$answered' WHERE `exam_title` = '$exam_title' AND `question` = '$question' AND `std_email` = '$std_email'";
+        $selectquery4 = "UPDATE `exam_answers` SET `std_name`='$std_name', `answered`='$answered' WHERE `exam_title` = '$exam_title' AND `question` = '$question' AND `std_id` = '$std_id'";
         $query4 = mysqli_query($db, $selectquery4);
     } else {
-        $selectquery5 = "INSERT INTO `exam_answers`(`std_name`, `std_email`, `exam_title`, `question`, `answered`) VALUES ('$std_name', '$std_email', '$exam_title', '$question', '$answered')";
+        $selectquery5 = "INSERT INTO `exam_answers`(`std_id`, `std_name`, `std_email`, `exam_title`, `question`, `answered`) VALUES ('$std_id', '$std_name', '$std_email', '$exam_title', '$question', '$answered')";
         $query5 = mysqli_query($db, $selectquery5);
     }
     die();
@@ -64,15 +65,16 @@ if (isset($_POST['exam_ans_submit'])) {
 
 // ########## Exam start Entry ##########
 if (isset($_POST['exam_started'])) {
+    $std_id = $_POST['std_id'];
     $std_name = $_POST['std_name'];
     $std_email = $_POST['std_email'];
     $exam_name = $_POST['exam_name'];
     $attendence_status = 'Ended';
 
-    $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '$std_name' AND `exam_name` = '$exam_name'";
+    $selectquery1 = "SELECT * FROM `std_exam_status` WHERE `std_id` = '$std_id' AND `exam_name` = '$exam_name'";
     $query1 = mysqli_query($db, $selectquery1);
     if (mysqli_num_rows($query1) == 0) {
-        $selectquery2 = "INSERT INTO `std_exam_status`(`std_name`, `std_email`, `exam_name`, `attendence_status`) VALUES ('$std_name','$std_email','$exam_name','$attendence_status')";
+        $selectquery2 = "INSERT INTO `std_exam_status`(`std_id`, `std_name`, `std_email`, `exam_name`, `attendence_status`) VALUES ('$std_id', '$std_name','$std_email','$exam_name','$attendence_status')";
         $query2 = mysqli_query($db, $selectquery2);
     } else {
         die();
@@ -105,7 +107,7 @@ if (isset($_POST['show_results'])) {
             INNER JOIN `add_question`
             ON exam_answers.question = add_question.question
             AND exam_answers.exam_title = add_question.exam_title
-            WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_name = '{$res3['std_name']}'";
+            WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_id = '$std_id'";
 
     $result2 = mysqli_query($db, $sql2);
     $marks = 0;
@@ -164,7 +166,7 @@ if (isset($_POST['show_results'])) {
     $total_records = mysqli_num_rows($result4);
 
     // exam_answers Table
-    $sql5 = "SELECT * FROM `exam_answers` WHERE `std_name` = '{$res3['std_name']}' AND `exam_title` = '{$res1['exam_title']}'";
+    $sql5 = "SELECT * FROM `exam_answers` WHERE `std_id` = '$std_id' AND `exam_title` = '{$res1['exam_title']}'";
     $result5 = mysqli_query($db, $sql5);
     $i = 0;
     foreach ($result5 as $res5) {

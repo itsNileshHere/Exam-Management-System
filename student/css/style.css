@@ -35,16 +35,16 @@ tbody tr td .fa-edit {
     /* background-color: #f8f9fc; */
     background-color: #eff2f4;
     width: 100%;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 
 #wrapper #content-wrapper #content {
-    flex: 1 0 auto
+    flex: 1 0 auto;
 }
 
 .current {
     font-weight: bold;
-    color: rgba(0, 0, 0, .9) !important;
+    color: rgba(0, 0, 0, 0.9) !important;
 }
 
 .card-header {
@@ -76,7 +76,37 @@ tbody tr td .fa-edit {
     background-color: white;
     color: black;
     padding-bottom: 20px;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+
+input[type="date"]::before,
+input[type="time"]::before {
+    color: #858796;
+    content: attr(placeholder);
+}
+
+input[type="date"],
+input[type="time"] {
+    color: rgba(255, 255, 255, 0);
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid,
+input[type="time"]:focus,
+input[type="time"]:valid {
+    color: #4d4f5a;
+}
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text,
+input[type="time"]:in-range::-webkit-datetime-edit-hour-field,
+input[type="time"]:in-range::-webkit-datetime-edit-minute-field,
+input[type="time"]:in-range::-webkit-datetime-edit-second-field,
+input[type="time"]:in-range::-webkit-datetime-edit-ampm-field,
+input[type="time"]:in-range::-webkit-datetime-edit-text {
+    display: none;
 }
 
 /* --------- exam.php --------- */
@@ -86,7 +116,7 @@ tbody tr td .fa-edit {
     height: auto;
     background-color: white;
     color: black !important;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
 }
 
 .butn {
@@ -95,14 +125,15 @@ tbody tr td .fa-edit {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .35rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-radius: 0.35rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     cursor: pointer;
 }
 
 .butn:focus,
 a.butn:hover {
-    text-decoration: none
+    text-decoration: none;
 }
 
 .butn-primary {
@@ -136,17 +167,16 @@ a.butn:hover {
 
 .butn-danger:hover {
     color: #fff;
-    background-color: #d52a1a
+    background-color: #d52a1a;
 }
 
 .butn-danger.disabled {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
-    opacity: .65;
+    opacity: 0.65;
     pointer-events: none;
     cursor: default;
-
 }
 
 .butn-results {
@@ -216,7 +246,6 @@ a.butn:hover {
 .exam-details-position .col-9 {
     padding-left: 20px;
     padding-right: 0;
-
 }
 
 .form-pad {
@@ -251,7 +280,7 @@ a.butn:hover {
     border-radius: 100%;
     display: inline-flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 #exam_back_btn {
@@ -320,8 +349,8 @@ a.butn:hover {
     padding-right: 10px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -460,7 +489,7 @@ input[type=number]::-webkit-outer-spin-button {
 .question-part #question {
     padding: 10px 30px 30px;
     font-size: 18px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.205)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
 }
 
 .question-part #question .float-right {
@@ -732,7 +761,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .exams-view .show_results_btn:active:focus {
-    box-shadow: 0 0 0 0.2rem rgb(95, 62, 150, 0.5)
+    box-shadow: 0 0 0 0.2rem rgb(95, 62, 150, 0.5);
 }
 
 .exams-view #details_btn i,
@@ -930,7 +959,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .result-box #table_body tbody {
-    background-color: #9BF3F3;
+    background-color: #9bf3f3;
     color: #000;
     font-weight: 600;
 }
@@ -953,25 +982,28 @@ input[type=number]::-webkit-outer-spin-button {
     left: 50px;
 }
 
-.print-butn button{
+.print-butn button {
     font-weight: 600;
 }
 
 .print-butn #print_btn {
-    margin-left: 30px;
+    margin-left: 32px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.print-butn #answer_sheet {
+    margin-left: 27px;
     margin-bottom: 8px;
     display: block;
 }
 
 .print-butn #back_btn {
-    margin-left: 25px;
+    margin-left: 20px;
     margin-bottom: 8px;
     display: block;
-}
-
-.print-butn #detailed_result {
-    margin-left: 20px;
-    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* -------------- exam_result.php -------------- */

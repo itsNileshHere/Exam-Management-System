@@ -42,7 +42,7 @@ include "assets/navbar.php";
             $start_time_date = date('F j Y h:i A', strtotime($res1['exam_date'] . ' ' . $res1['exam_time']));
             $end_time_date = date('h:i A', ($start_time + $remaining_seconds));
 
-            $selectquery3 = "SELECT * FROM `std_exam_status` WHERE `std_name` = '{$res2['std_name']}' AND `exam_name` = '{$res1['exam_title']}'";
+            $selectquery3 = "SELECT * FROM `std_exam_status` WHERE `std_id` = '{$_SESSION['std_id']}' AND `exam_name` = '{$res1['exam_title']}'";
             $query3 = mysqli_query($db, $selectquery3);
             $row3 = mysqli_fetch_array($query3);
 

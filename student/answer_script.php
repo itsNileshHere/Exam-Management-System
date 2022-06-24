@@ -29,11 +29,6 @@ if (!isset($_SESSION['exam_id'])) {
                     $res1 = mysqli_fetch_array($result1);
                     $exam_date = date('F j Y', strtotime($res1['exam_date']));
 
-                    // add_student Table
-                    $sql3 = "SELECT * FROM `add_student` WHERE `std_id` = '{$_SESSION['std_id']}'";
-                    $result3 = mysqli_query($db, $sql3);
-                    $res3 = mysqli_fetch_array($result3);
-
                     // Joining add_exam with exam_answers
                     $sql2 = "SELECT add_question.question, add_question.ans_1, add_question.ans_2, add_question.ans_3, add_question.ans_4, exam_answers.answered, add_question.correct_answer, add_exam.correct, add_exam.wrong
                     FROM `exam_answers`
@@ -42,7 +37,7 @@ if (!isset($_SESSION['exam_id'])) {
                     INNER JOIN `add_question`
                     ON exam_answers.question = add_question.question
                     AND exam_answers.exam_title = add_question.exam_title
-                    WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_name = '{$res3['std_name']}'";
+                    WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_id = '{$_SESSION['std_id']}'";
 
                     $result2 = mysqli_query($db, $sql2);
                     $i = 0;

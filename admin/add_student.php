@@ -16,13 +16,7 @@ include "assets/navbar.php"
 
     <title>Add Student</title>
 
-    <!-- ------------------- DatePicker ------------------- -->
-
-    <link href="css/bootstrap-datepicker.css?version=1" rel="stylesheet" type="text/css">
-    <script src="js/bootstrap.datepicker.js"></script>
-
-    <!-- --------------------- Sweet Alert --------------------- -->
-
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 </head>
@@ -36,7 +30,6 @@ include "assets/navbar.php"
             <br>
 
             <form id="add_student" name="add_student" action="" method="POST">
-
                 <div class="row mb-3 form-group">
                     <label class="col-sm-3 col-form-label fw-600" for="std_name">Student Name :</label>
                     <div class="col-sm-9">
@@ -58,11 +51,7 @@ include "assets/navbar.php"
                 <div class="row mb-3 form-group">
                     <label class="col-sm-3 col-form-label fw-600" for="birth_date">Date of Birth :</label>
                     <div class="col-sm-9">
-                        <div class="input-group date" id="datepicker">
-                            <input style="border-radius: 5px;" type="text" class="form-control" name="birth_date" placeholder="DD-MM-YYYY" required>
-                            <div class="input-group-append">
-                            </div>
-                        </div>
+                        <input style="border-radius: 5px;" type="date" class="form-control" name="birth_date" id="birth_date" placeholder="DD-MMM-YYYY" required>
                     </div>
                 </div>
 
@@ -109,12 +98,12 @@ include "assets/navbar.php"
                 <div class="row mb-3 form-group" style="padding-bottom: 5px;">
                     <label class="col-sm-3 col-form-label fw-600" for="password">Password :</label>
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" name="password" placeholder="Input Password" required>
+                        <input type="password" class="form-control" name="password" autocomplete="on" placeholder="Input Password" required>
                     </div>
                 </div>
 
                 <div style="text-align: center; padding-top:10px">
-                    <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 115px" class="btn btn-primary" type="submit" name="add_student_btn" value="Add Student">
+                    <input style="background-color: #2a498b; border-color:#2e2cc9; height: 38px; width: 115px" class="btn btn-primary" type="submit" name="add_student_btn" id="add_student_btn" value="Add Student">
                 </div>
 
             </form>
@@ -122,27 +111,27 @@ include "assets/navbar.php"
         <br>
     </div>
     </div>
-    
-    <!-- -------------------- DatePicker Script --------------- -->
 
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker()
-                .on('changeDate', function(ev) {
-                    $('#datepicker').datepicker('hide');
+    <script>
+        $(document).ready(function() {
+            $("#birth_date").click(function() {
+                var placeholderDate = setInterval(function() {
+                    if ($('#birth_date').length && $('#birth_date').val().length) {
+                        $('#birth_date').removeAttr("placeholder");
+                    } else {
+                        $('#birth_date').attr('placeholder', 'DD-MMM-YYYY');
+                    }
+                }, 100);
+                $("#add_student_btn").click(function() {
+                    clearInterval(placeholderDate);
                 });
-        })
+            });
+        });
     </script>
 
-
-
-    <!-- ---------------------- add_student php code ----------------- -->
-
+    <!--  add_student php code  -->
     <?php
-
     if (isset($_POST['add_student_btn'])) {
-
-
         mysqli_query($db, "INSERT INTO `add_student`(`std_name`, `gender`, `dob`, `course`, `year`, `email`, `password`) VALUES('$_POST[std_name]', '$_POST[gender]', '$_POST[birth_date]', '$_POST[course]', '$_POST[year_lvl]', '$_POST[email_id]', '$_POST[password]')");
     ?>
         <script type="text/javascript">

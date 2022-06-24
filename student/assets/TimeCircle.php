@@ -29,7 +29,7 @@
     }
 </style>
 <script>
-    var hrs_start = <?php echo $remaining_seconds; ?>;
+    var hrs_start = <?php echo $total_second; ?>;
     (function($) {
 
         var useWindow = window;

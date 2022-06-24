@@ -14,7 +14,7 @@ if (!isset($_SESSION['exam_id'])) {
 
     <title>Exam Results</title>
 
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 </head>
@@ -27,11 +27,6 @@ if (!isset($_SESSION['exam_id'])) {
         $result1 = mysqli_query($db, $sql1);
         $res1 = mysqli_fetch_array($result1);
 
-        // add_student Table
-        $sql3 = "SELECT * FROM `add_student` WHERE `std_id` = '{$_SESSION['std_id']}'";
-        $result3 = mysqli_query($db, $sql3);
-        $res3 = mysqli_fetch_array($result3);
-
         // Joining add_exam with exam_answers
         $sql2 = "SELECT exam_answers.question, exam_answers.answered, add_question.correct_answer, add_exam.correct, add_exam.wrong
             FROM `exam_answers`
@@ -40,7 +35,7 @@ if (!isset($_SESSION['exam_id'])) {
             INNER JOIN `add_question`
             ON exam_answers.question = add_question.question
             AND exam_answers.exam_title = add_question.exam_title
-            WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_name = '{$res3['std_name']}'";
+            WHERE exam_answers.exam_title = '{$res1['exam_title']}' AND exam_answers.std_id = '{$_SESSION['std_id']}'";
 
         $result2 = mysqli_query($db, $sql2);
         $marks = 0;
@@ -62,7 +57,7 @@ if (!isset($_SESSION['exam_id'])) {
         $total_records = mysqli_num_rows($result4);
 
         // exam_answers Table
-        $sql5 = "SELECT * FROM `exam_answers` WHERE `std_name` = '{$res3['std_name']}' AND `exam_title` = '{$res1['exam_title']}'";
+        $sql5 = "SELECT * FROM `exam_answers` WHERE `std_id` = '{$_SESSION['std_id']}' AND `exam_title` = '{$res1['exam_title']}'";
         $result5 = mysqli_query($db, $sql5);
         $i = 0;
         foreach ($result5 as $res5) {

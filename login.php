@@ -13,7 +13,6 @@ session_start();
     <link href="admin/css/bootstrap.css?version=1" rel="stylesheet" type="text/css">
     <link href="admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> -->
     <script src="admin/js/jquery.min.js"></script>
     <script src="admin/js/bootstrap.bundle.min.js"></script>
 
@@ -70,7 +69,7 @@ session_start();
                                             Remember me
                                         </label>
                                     </div>
-                                    <a href="#!" class="forgot_pass">Forgot password?</a>
+                                    <!-- <a href="#!" class="forgot_pass">Forgot password?</a> -->
                                 </div>
 
                                 <div class="text-center text-lg-start mt-4 pt-2">
@@ -116,7 +115,7 @@ session_start();
                                             Remember me
                                         </label>
                                     </div>
-                                    <a href="#!" class="forgot_pass">Forgot password?</a>
+                                    <!-- <a href="#!" class="forgot_pass">Forgot password?</a> -->
                                 </div>
 
                                 <div class="text-center text-lg-start mt-4 pt-2">

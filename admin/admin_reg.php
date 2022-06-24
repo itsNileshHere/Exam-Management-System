@@ -8,6 +8,8 @@ include "assets/header.php"
 <head>
 
     <title>Admin Registration</title>
+
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 </head>

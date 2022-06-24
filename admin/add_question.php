@@ -214,10 +214,6 @@ include "assets/navbar.php";
     </div>
     </div>
 
-    <?php
-    include "assets/footer.php"
-    ?>
-
     <!-- ---------------------------- Add Question Modal ---------------------------------- -->
     <div class="modal fade" id="add_qs_modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">

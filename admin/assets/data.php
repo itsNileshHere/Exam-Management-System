@@ -274,11 +274,12 @@ if (isset($_POST['student_data'])) {
     if (mysqli_num_rows($query) > 0) {
         $output .= $tableHead;
         foreach ($query as $res) {
+            $dob = date('d-m-Y', strtotime($res['dob']));
             $output .= '<tr>
             <td id="student_id" style="display:none;">' . $res['std_id'] . '</td>
             <td class="pl-4">' . $res['std_name'] . '</td>
             <td class="text-center">' . $res['gender'] . '</td>
-            <td class="text-center">' . $res['dob'] . '</td>
+            <td class="text-center">' . $dob . '</td>
             <td class="text-center">' . $res['course'] . '</td>
             <td class="text-center">' . $res['year'] . '</td>
             <td class="text-center">' . $res['email'] . '</td>
@@ -348,6 +349,8 @@ if (isset($_POST['exam_data'])) {
     if (mysqli_num_rows($query) > 0) {
         $output .= $tableHead;
         foreach ($query as $res) {
+            $exam_date = date('d-m-Y', strtotime($res['exam_date']));
+            $exam_time = date('h:i A', strtotime($res['exam_time']));
 
             $status_data = "";
             if ($res['status'] == "Pending")
@@ -361,7 +364,7 @@ if (isset($_POST['exam_data'])) {
             <td id="exam_id" style="display:none;">' . $res['exam_id'] . '</td>
             <td id="exam_title" class="pl-4">' . $res['exam_title'] . '</td>
             <td class="pl-4">' . $res['course'] . '</td>
-            <td class="text-center">' . $res['exam_date'] . ' ' . $res['exam_time'] . '</td>
+            <td class="text-center">' . $exam_date . ' ' . $exam_time . '</td>
             <td class="text-center">' . $status_data . '</td>
             <td class="text-center"><i class="fa fa-edit edit_exam_btn" style="margin-left: 18px;"></i></td>
             <td class="text-center"><a class="fa fa-trash delete_exam_btn" style="margin-right: 18px;"></a></td>
@@ -474,4 +477,3 @@ if (isset($_POST['tokenGen'])) {
     }
     die();
 }
-?>

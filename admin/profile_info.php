@@ -10,7 +10,7 @@ include "assets/navbar.php";
 
     <title>Profile Info</title>
 
-    <!-- ---------------- Sweet Alert -------------- -->
+    <!--  Sweet Alert  -->
     <script src="js/sweetalert.js"></script>
 
 
@@ -113,7 +113,7 @@ include "assets/navbar.php";
         }
     ?>
 
-        <!-- ------------------ Sweet Alert ------------------ -->
+        <!--  Sweet Alert  -->
 
         <script type="text/javascript">
             swal("Success", "Profile Updated Successfully", "success")
