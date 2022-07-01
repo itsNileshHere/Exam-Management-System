@@ -8,9 +8,14 @@ include "admin/assets/connection.php";
 
 <head>
     <title>Exam Management System</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="admin/img/favicon.png">
+
     <!-- Custom CSS -->
     <link href="style.css?version=1" rel="stylesheet" type="text/css">
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
 
@@ -52,8 +57,11 @@ include "admin/assets/connection.php";
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">About This Project</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                    <p class="text-white mb-4">Follow Me on :</p>
+                    <p class="text-white-90 mb-4">This is an in-house Project work undertaken in context of partial fulfillment in the Computer Science & Tech. Department for Exam. This Project ensures a safe and secure environment for students to test their Knowledge.</p>
+                    <div class="mb-4" id="follow">Follow Me on :
+                        <a id="github" href="https://github.com/X-PROFESSOR" target="_blank"><img src="student/img/GitHub.png"></a>
+                        <a id="telegram" href="https://t.me/IISanataniII" target="_blank"><img src="student/img/Telegram.png"></a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8880,6 +8880,10 @@ a.text-dark:focus, a.text-dark:hover {
     color: rgba(0, 0, 0, .5) !important
 }
 
+.text-profile-mail {
+    color: rgb(44 44 44 / 80%) !important;
+}
+
 .text-white-50 {
     color: rgba(255, 255, 255, .5) !important
 }

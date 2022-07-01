@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 24, 2022 at 06:26 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Host: sql110.epizy.com
+-- Generation Time: Jun 25, 2022 at 10:45 AM
+-- Server version: 10.3.27-MariaDB
+-- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `exam_management`
+-- Database: `epiz_32030629_exam_management`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +34,13 @@ CREATE TABLE `add_class` (
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `add_class`
+--
+
+INSERT INTO `add_class` (`class_id`, `class_name`, `status`) VALUES
+(1, 'Class 1', 'Enabled');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +53,13 @@ CREATE TABLE `add_course` (
   `create_time` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_course`
+--
+
+INSERT INTO `add_course` (`course_id`, `course_name`, `create_time`, `status`) VALUES
+(1, 'Software Engineering', '24-06-2022 23:32', 'Enabled');
 
 -- --------------------------------------------------------
 
@@ -65,6 +80,13 @@ CREATE TABLE `add_exam` (
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `add_exam`
+--
+
+INSERT INTO `add_exam` (`exam_id`, `course`, `exam_time_limit`, `total_question`, `correct`, `wrong`, `exam_title`, `exam_date`, `exam_time`, `status`) VALUES
+(1, 'Software Engineering', '5', '5', '2', '1', 'Exam of Software Engineering', '2022-06-25', '12:00', 'Ended');
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +105,17 @@ CREATE TABLE `add_question` (
   `correct_answer` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `add_question`
+--
+
+INSERT INTO `add_question` (`question_id`, `exam_title`, `course`, `question`, `ans_1`, `ans_2`, `ans_3`, `ans_4`, `correct_answer`) VALUES
+(1, 'Exam of Software Engineering', 'Software Engineering', 'What is Software Engineering?', 'Designing a software', 'Testing a software', 'Application of engineering principles to the design a software', 'None of the above', 'Application of engineering principles to the design a software'),
+(2, 'Exam of Software Engineering', 'Software Engineering', 'Attributes of good software is -', 'Development', 'Maintainability & functionality', 'Functionality', 'Maintainability', 'Maintainability & functionality'),
+(3, 'Exam of Software Engineering', 'Software Engineering', 'When can white-box testing be started?', 'After SRS creation', 'After installation', 'After programming', 'After designing', 'After programming'),
+(4, 'Exam of Software Engineering', 'Software Engineering', 'A process view in software engineering would consider which of the following', 'Product performance', 'Staffing', 'Functionality', 'Reliability', 'Staffing'),
+(5, 'Exam of Software Engineering', 'Software Engineering', 'What does SDLC stands for?', 'System Design Life Cycle', 'Software Design Life Cycle', 'Software Development Life Cycle', 'System Development Life cycle', 'Software Development Life Cycle');
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +133,13 @@ CREATE TABLE `add_student` (
   `password` varchar(100) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_student`
+--
+
+INSERT INTO `add_student` (`std_id`, `std_name`, `gender`, `dob`, `course`, `year`, `email`, `password`, `image`) VALUES
+(1, 'Ram Charan', 'Male', '2001-07-14', 'Software Engineering', '2nd Year', 'ramcharan@gmail.com', '1234', 'uploads/Cgdm7yMewn.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,6 +176,13 @@ CREATE TABLE `assign_course` (
   `course_name` varchar(100) NOT NULL,
   `create_time` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assign_course`
+--
+
+INSERT INTO `assign_course` (`assign_id`, `class_name`, `course_name`, `create_time`) VALUES
+(1, 'Class 1', 'Software Engineering', '24-06-2022 23:33');
 
 -- --------------------------------------------------------
 
@@ -234,31 +281,31 @@ ALTER TABLE `std_exam_status`
 -- AUTO_INCREMENT for table `add_class`
 --
 ALTER TABLE `add_class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `add_course`
 --
 ALTER TABLE `add_course`
-  MODIFY `course_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `add_exam`
 --
 ALTER TABLE `add_exam`
-  MODIFY `exam_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `add_question`
 --
 ALTER TABLE `add_question`
-  MODIFY `question_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `question_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `add_student`
 --
 ALTER TABLE `add_student`
-  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admin_reg`
@@ -270,7 +317,7 @@ ALTER TABLE `admin_reg`
 -- AUTO_INCREMENT for table `assign_course`
 --
 ALTER TABLE `assign_course`
-  MODIFY `assign_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `assign_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `exam_answers`

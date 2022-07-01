@@ -8,8 +8,8 @@
 
     <title>Exam Management System</title>
 
-    <!--  Favicon.ico error fix  -->
-    <link rel="shortcut icon" href="#">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
     <!--  Custom CSS  -->
     <link href="css/style.css?version=1" rel="stylesheet" type="text/css">

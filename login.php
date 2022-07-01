@@ -9,10 +9,18 @@ session_start();
 
     <title>Login</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="admin/img/favicon.png">
+
+    <!-- stylesheet -->
     <link href="admin/css/style.css?version=1" rel="stylesheet" type="text/css">
     <link href="admin/css/bootstrap.css?version=1" rel="stylesheet" type="text/css">
     <link href="admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <!-- Javascript -->
     <script src="admin/js/jquery.min.js"></script>
     <script src="admin/js/bootstrap.bundle.min.js"></script>
 

@@ -38,7 +38,7 @@ include "assets/navbar.php";
                         </div>
                         <div style="margin-top: 168px;">
                             <p class="font-weight-bold"><?php echo $res2['std_name'] ?> </p>
-                            <p class="text-black-50"><?php echo $res2['email'] ?></p>
+                            <p class="text-profile-mail"><?php echo $res2['email'] ?></p>
                         </div>
                     </div>
                     <div class="profile-info">

@@ -523,13 +523,13 @@ include "assets/navbar.php";
                                 <td style="width: 78%">\
                                 <b>' + [i++] + ') ' + value['question'] + '</b><br>\
                                 <div class="pt-1">\
-                                <span class="pl-4' + (value['ans_1'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'a.&nbsp' + value['ans_1'] + '</span><br>\
-                                <span class="pl-4' + (value['ans_2'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'b.&nbsp' + value['ans_2'] + '</span><br>\
-                                <span class="pl-4' + (value['ans_3'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'c.&nbsp' + value['ans_3'] + '</span><br>\
-                                <span class="pl-4' + (value['ans_4'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'd.&nbsp' + value['ans_4'] + '</span><br>\
+                                <p class="pl-4' + (value['ans_1'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'a.&nbsp' + value['ans_1'] + '</p>\
+                                <p class="pl-4' + (value['ans_2'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'b.&nbsp' + value['ans_2'] + '</p>\
+                                <p class="pl-4' + (value['ans_3'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'c.&nbsp' + value['ans_3'] + '</p>\
+                                <p class="pl-4' + (value['ans_4'] == value['correct_answer'] ? ' text-success' : '') + '">' + 'd.&nbsp' + value['ans_4'] + '</p>\
                                 </div>\
                                 </td>\
-                                <td class="text-center pr-4"><i class="fa fa-edit question_edit_btn"></i></td>\
+                                <td class="text-center pr-4" style="height:20px"><i class="fa fa-edit question_edit_btn"></i></td>\
                                 <td class="text-center"><a class="fa fa-trash question_delete_btn"></a></td>\
                                 </tr>');
                         });
