@@ -207,7 +207,7 @@ svg {
     padding-bottom: 0.5rem;
 }
 
-.navbar > .container {
+.navbar>.container {
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -470,7 +470,10 @@ header.masthead {
             rgb(72 72 72 / 80%) 100%
         ),
         url(admin/img/bg-masthead.jpg); */
-    background: #bde8e1, url(admin/img/bg-masthead.png);
+    background: linear-gradient(to bottom,
+            rgb(64 64 64 / 80%) 0%,
+            rgb(72 72 72 / 80%) 100%),
+        url(admin/img/bg-masthead.png);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
