@@ -46,7 +46,7 @@ session_start();
 
                 <div class="std_login row">
                     <div class="col text-center">
-                        <img class="log-img" src="admin/img/draw2.webp">
+                        <img class="log-img" src="admin/img/draw2.png">
                     </div>
                     <div class="col">
                         <div class="log-form-container">
@@ -137,7 +137,7 @@ session_start();
                         </div>
                     </div>
                     <div class="col text-center mt-4">
-                        <img class="log-img" src="student/img/27799766.jpg">
+                        <img class="log-img" src="student/img/27799766.png">
                     </div>
                 </div>
 
