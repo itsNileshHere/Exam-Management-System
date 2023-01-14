@@ -1,6 +1,13 @@
 # Project Title
 
-Online Exam Management System Using Php, CSS and JavaScript
+This is an Online Exam Management System Project made with **HTML**, **CSS**, **JavaScript** as Frontend and **php**, **MySQL** as Backend.
+
+**By** : [PROFESSOR](https://www.github.com/X-PROFESSOR)
 
 
-### by : [@PROFESSOR](https://www.github.com/X-PROFESSOR)
+# How to Deploy
+
+The Project can be deployed locally using freewares like [XAMPP](https://www.apachefriends.org/). Copy the Project to `XAMPP/htdocs` folder and start the server. To setup Database open `http://localhost/phpmyadmin` in browser. Create a Database named `exam_management`. Navigate to import tab and import the `exam_management.sql` file. 
+
+> Default **admin** Email and Password are `admin@email` and `1234`. 
+> Default **student** Email and Password are `student@gmail.com` and `1234`. 

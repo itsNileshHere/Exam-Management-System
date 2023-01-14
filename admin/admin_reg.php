@@ -59,7 +59,7 @@ include "assets/header.php"
                         </div>
                     </div>
                     <div class="col text-center" style="padding-top: 70px">
-                        <img class="log-img" src="img/27799766.jpg">
+                        <img class="log-img" src="img/27799766.png">
                     </div>
                 </div>
             </div>
