@@ -1,5 +1,5 @@
 <?php
-include "assets/connection.php";
+include "../connection.php";
 include "assets/header.php";
 @session_start();
 if (!isset($_SESSION['exam_id'])) {

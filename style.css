@@ -418,6 +418,7 @@ hr.divider-light {
 
     #mainNav .navbar-brand:hover {
         color: #fff;
+        cursor: pointer;
     }
 
     #mainNav .navbar-nav .nav-item .nav-link {
@@ -444,6 +445,7 @@ hr.divider-light {
 
     #mainNav.navbar-shrink .navbar-brand:hover {
         color: #f4623a;
+        cursor: pointer;
     }
 
     #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {

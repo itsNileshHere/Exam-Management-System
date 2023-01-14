@@ -138,8 +138,8 @@ CREATE TABLE `add_student` (
 -- Dumping data for table `add_student`
 --
 
-INSERT INTO `add_student` (`std_id`, `std_name`, `gender`, `dob`, `course`, `year`, `email`, `password`, `image`) VALUES
-(1, 'Ram Charan', 'Male', '2001-07-14', 'Software Engineering', '2nd Year', 'ramcharan@gmail.com', '1234', 'uploads/Cgdm7yMewn.jpg');
+INSERT INTO `add_student` (`std_id`, `std_name`, `gender`, `dob`, `course`, `year`, `email`, `password`) VALUES
+(1, 'Student One', 'Male', '2001-07-14', 'Software Engineering', '2nd Year', 'student@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE `admin_reg` (
 --
 
 INSERT INTO `admin_reg` (`adm_id`, `image`, `full_name`, `contact`, `emailid`, `password`, `special_token`) VALUES
-(1, '', 'Nilesh Mukherjee', '8754963235', 'admin@email', '1234', 'MthPNTKv0n');
+(1, '', 'Admin One', '1234567890', 'admin@email', '1234', 'MthPNTKv0n');
 
 -- --------------------------------------------------------
 

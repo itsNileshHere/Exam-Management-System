@@ -5,7 +5,7 @@ if (isset($_SESSION['exam_id'])) {
     unset($_SESSION['exam_id']);
 }
 
-include "assets/connection.php";
+include "../connection.php";
 include "assets/header.php";
 include "assets/navbar.php";
 ?>

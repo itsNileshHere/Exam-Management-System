@@ -1,5 +1,5 @@
 <?php
-include "admin/assets/connection.php";
+include "connection.php";
 session_start();
 
 if (isset($_POST['got_std'])) {

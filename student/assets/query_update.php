@@ -1,6 +1,5 @@
 <?php
-// include "../assets/connection.php";
-include "connection.php";
+include "../connection.php";
 @session_start();
 
 $sql = "SELECT * FROM `add_exam`";

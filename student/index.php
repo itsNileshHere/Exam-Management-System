@@ -1,5 +1,5 @@
 <?php
-include "assets/connection.php";
+include "../connection.php";
 ?>
 <!DOCTYPE html>
 <html>

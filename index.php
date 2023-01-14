@@ -1,5 +1,5 @@
 <?php
-include "admin/assets/connection.php";
+include "connection.php";
 @session_start();
 ?>
 
@@ -25,7 +25,7 @@ include "admin/assets/connection.php";
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4">
-            <a class="navbar-brand" href="#page-top">Online Exam Management System</a>
+            <section class="navbar-brand">Online Exam Management System</section>
             <ul class="navbar-nav ms-auto my-2">
                 <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -60,7 +60,7 @@ include "admin/assets/connection.php";
                     <p class="text-white-90 mb-4">This is an in-house Project work undertaken in context of partial fulfillment in the Computer Science & Tech. Department for Exam. This Project ensures a safe and secure environment for students to test their Knowledge.</p>
                     <div class="mb-4" id="follow">Follow Me on :
                         <a id="github" href="https://github.com/X-PROFESSOR" target="_blank"><img src="student/img/GitHub.png"></a>
-                        <a id="telegram" href="https://t.me/itsprofessorhere" target="_blank"><img src="student/img/Telegram.png"></a>
+                        <a id="telegram" href="https://t.me/DsntMtter" target="_blank"><img src="student/img/Telegram.png"></a>
                     </div>
                 </div>
             </div>
@@ -94,10 +94,5 @@ include "admin/assets/connection.php";
         });
     </script>
 
-    <?php
-    include "student/assets/query_update.php";
-    ?>
-
 </body>
-
 </html>

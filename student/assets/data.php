@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+include "../../connection.php";
 
 if (isset($_POST['exam_details_btn'])) {
     @session_start();

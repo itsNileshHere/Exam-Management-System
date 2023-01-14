@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+include "../../connection.php";
 
 $limit = 6;
 $page = 0;
