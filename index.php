@@ -59,7 +59,7 @@ include "connection.php";
                     <hr class="divider divider-light" />
                     <p class="text-white-90 mb-4">This is an in-house Project work undertaken in context of partial fulfillment in the Computer Science & Tech. Department for Exam. This Project ensures a safe and secure environment for students to test their Knowledge.</p>
                     <div class="mb-4" id="follow">Follow Me on :
-                        <a id="github" href="https://github.com/X-PROFESSOR" target="_blank"><img src="student/img/GitHub.png"></a>
+                        <a id="github" href="https://github.com/itsNileshHere" target="_blank"><img src="student/img/GitHub.png"></a>
                         <a id="telegram" href="https://t.me/DsntMtter" target="_blank"><img src="student/img/Telegram.png"></a>
                     </div>
                 </div>
