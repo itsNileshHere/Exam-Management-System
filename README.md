@@ -2,7 +2,7 @@
 
 This is an Online Exam Management System Project made with **HTML**, **CSS**, **JavaScript** as Frontend and **php**, **MySQL** as Backend.
 
-**By** : [PROFESSOR](https://www.github.com/X-PROFESSOR)
+**By** : [itsNileshHere](https://github.com/itsNileshHere)
 
 
 # How to Deploy
