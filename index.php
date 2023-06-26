@@ -24,9 +24,9 @@ include "connection.php";
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container px-4">
+        <div class="container mx-4 w-100">
             <section class="navbar-brand">Online Exam Management System</section>
-            <ul class="navbar-nav ms-auto my-2">
+            <ul class="navbar-nav my-2 mx-3">
                 <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             </ul>
@@ -35,8 +35,8 @@ include "connection.php";
 
     <!-- Masthead-->
     <header class="masthead">
-        <div class="container px-4 h-100">
-            <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="container mx-4 h-100">
+            <div class="w-100 row h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Test Your Knowledge and Skills</h1>
                     <hr class="divider" />
